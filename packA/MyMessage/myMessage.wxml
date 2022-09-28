@@ -1,0 +1,7 @@
+<view class="contain">
+  <view class="inner">
+    <navigator url="../reply/reply?id={{item.article_id}}" class="card" wx:for="{{reply}}" wx:key="index">
+      {{item.name}}<text style="color: cornflowerblue;"> 回复你：</text>{{item.text}}
+    </navigator>
+  </view>
+</view> 

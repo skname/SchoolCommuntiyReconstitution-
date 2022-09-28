@@ -1,0 +1,9 @@
+<view class="contain">
+  <view class="middle">
+    <view class="title">报名流程</view>
+    <view class="detail">
+      请将自己的姓名、院系、班级、学号、联系方式（最好是手机号）、比赛方向以及自己的想法思路，想要选择的指导老师，以及自己擅长的领域等信息以邮件的方式发送至下方邮箱，我们会在第一时间与您取得联系！
+    </view>
+    <view><text user-select="true">邮箱：3518093769@qq.com(长按复制)</text></view>
+  </view>
+</view>

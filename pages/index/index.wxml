@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="head"> 
+        <swiper indicator-dots="true" autoplay="true" interval="3000" circular="true">
+            <swiper-item wx:for="{{imageBox}}" wx:key="index" bindtap="{{item.to!=''?'toweb':''}}" data-src="{{item.to}}">
+                <view class="title">
+                    <text>{{ item.title }}</text>
+                </view>
+                <image src="{{ item.src }}" mode="aspectFill"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+
+    <view class="middle">
+        <view class="inner">
+        <!-- 程序内跳转 -->
+            <navigator wx:for="{{menus}}" wx:key="{{item.id}}" url="{{item. url}}">
+                <view class="block">
+                    <image src="{{icons[item.id]}}" mode="aspectFit"></image>
+                    <text>{{item.name}}</text>
+                </view>
+            </navigator>
+        <!-- 其他小程序跳转 -->
+            <navigator url="" bindtap="toPrint">
+                <view class="block">
+                    <image src="{{icons[2]}}"></image>
+                    <text>远程打印</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,107 @@
+.contain{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://skself.work/static/back/back1.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.header{
+    width: 94vw;
+    height: 20vh;
+    margin-left: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: row;
+}
+.headerText{
+    color: rgba(0, 0, 0, 0.425);
+    margin-left: 20rpx;
+    text-shadow: 1rpx 1rpx 2rpx rgba(80, 26, 26, 0.548);
+}
+.headerText .text{
+    font-size: 25rpx;
+    color: #fff;
+}
+.header image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+.header view {
+    display:flex;
+    flex-direction: column;
+}
+
+.middle {
+    margin-top: 10vh;
+}
+
+.middle view{
+    width: 94vw;
+    height: 20vh;
+    margin: 3vw;
+    box-shadow: 0rpx 0rpx 10rpx 2rpx rgb(199, 170, 170);
+    border-radius: 20rpx;
+    background-color:rgba(230, 227, 227, 0.39);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 1rpx 1rpx 1rpx rgba(255, 0, 0, 0.548);
+    font-size: 40rpx;
+}
+.middle view image{
+    width: 8vh;
+}
+ 
+.writeForm{
+    position: absolute;
+    width: 90vw;
+    height: 50vh;
+    margin: 5vw;
+    background-color: #fff;
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    padding: 20rpx 50rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition-property: all;
+    transition-duration: 0.8s;
+}
+.writeForm input{
+    border-bottom: 1rpx solid #ccc;
+}
+.writeForm textarea{
+    background-color: rgba(245, 244, 244, 0.863);
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    padding: 20rpx;
+    font-size: 30rpx;
+}
+.formHeader{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+.btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btn view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200rpx;
+    height: 60rpx;
+    border-radius: 100rpx;
+    color: #fff;
+    background-color: rgb(46, 144, 209);
+}

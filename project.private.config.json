@@ -1,0 +1,148 @@
+{
+  "setting": {
+    "compileHotReLoad": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "",
+          "pathName": "package/GetWechat/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/send/send",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/space/space",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/messageBoard/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/info/cooperation/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/info/info",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/Person/index",
+          "query": "openid=o6UtZ4xHtCwsiFZ1OdQjNeeBB-R0&head=https%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FDYAIOgq83eq43f0HVSaJve7VyFRicGrHsFhXWkcLhk2ZFnzw61pBP7lX0w01NfJ3iaeuwKwic8FexAAyST4EYQMAQ%2F132",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/Person/index",
+          "query": "openid=o6UtZ4xHtCwsiFZ1OdQjNeeBB-R0&head=https%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FDYAIOgq83eq43f0HVSaJve7VyFRicGrHsFhXWkcLhk2ZFnzw61pBP7lX0w01NfJ3iaeuwKwic8FexAAyST4EYQMAQ%2F132&name=%E9%9A%8F%E9%81%87%E8%80%8C%E5%AE%89&private=1",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/swim/swim",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/swim/swim",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/messageBoard/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packB/send/send",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packB/send/send",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/run/run",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/my/my",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packB/Person/index",
+          "query": "openid=o6UtZ4xHtCwsiFZ1OdQjNeeBB-R0&head=https%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FDYAIOgq83eq43f0HVSaJve7VyFRicGrHsFhXWkcLhk2ZFnzw61pBP7lX0w01NfJ3iaeuwKwic8FexAAyST4EYQMAQ%2F132&name=%E9%9A%8F%E9%81%87%E8%80%8C%E5%AE%89&private=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/match/match",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/order/order",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageIndex/Calculator/calculator",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "libVersion": "2.26.0"
+}

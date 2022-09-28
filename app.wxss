@@ -1,0 +1,30 @@
+/**app.wxss**/
+.container {
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8E8E8;
+  width: 100vw;
+  /* height: 100vh; */
+  /* overflow-y: scroll; */
+  box-sizing: border-box;
+  border: 0rpx;
+  padding: 0rpx;
+  font-size: 32rpx;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.close{
+  width: 50rpx;
+  height: 50rpx;
+  background-color:rgb(247, 222, 222);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  font-weight: 700;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+

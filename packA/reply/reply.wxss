@@ -1,0 +1,119 @@
+.content{
+  width: 100%;
+  height: auto;
+  background-color: #EDEDED;
+}
+.content .card {
+  margin-top: 20rpx;
+
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 30rpx;
+  padding-bottom: 20rpx;
+}
+.card .text,.head,.image,.imageOne{
+  width: 94%;
+  margin-left: 3%;
+  padding-top: 20rpx;
+}
+.head{
+  display: flex;
+  flex-direction: row;
+}
+.head view{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  justify-content:  space-around;
+}
+/* 设置头像大小 */
+.head image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.card .text{
+  padding-bottom: 20rpx;
+}
+
+.card .bottom{
+  display: flex;
+  flex-direction: row;
+  border-top: 3rpx solid #eeecec;
+  height: 5vh;
+}
+.card .bottom view{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+}
+
+
+.content .image {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.content .image image{
+  width: 29vw;
+  height: 29vw;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+}
+
+.commentContain{
+  width: 90%;
+  margin-left: 7%;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  background-color: rgba(248, 243, 243, 0.568);
+  padding-left: 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.commentContain view{
+  padding: 5rpx 0rpx;
+}
+.commentContain .name{
+  color: #62D5C9;
+}
+
+.input{
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 450rpx;
+  background-color: #F7F7F7;
+}
+.input textarea{
+  margin-left: 3%;
+  width: 78vw;
+  height: 6vh;
+  box-sizing: border-box;
+  padding: 5rpx 10rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin-bottom: 1vh;
+  margin-top: auto;
+}
+.input .button{
+  width: 15vw;
+  height: 6vh;
+  background-color: #07C160;
+  border-radius: 15rpx;
+  font-size: 25rpx;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+  margin-left: 1vw;
+  margin-bottom: 1vh;
+  margin-top: auto;
+}

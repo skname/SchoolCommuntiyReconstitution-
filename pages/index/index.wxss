@@ -1,0 +1,43 @@
+
+.head image{
+  width: 100%;
+  height: 100%;
+}
+.head .title{
+  width: 100%;
+  background-color: rgba(116, 121, 126, 0.452);
+  line-height: 5vh;
+  position: absolute;
+  bottom: 0;
+  color: aliceblue;
+  font-size: 30rpx;
+  text-indent: 1rem;
+}
+
+.middle{
+  width: 100vw;
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+.middle .inner{
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.middle .inner view{
+  width: 25vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  font-size: 28rpx;
+  line-height: 2;
+}
+
+.block image{
+  height: 10vw;
+  width: 10vw;
+}

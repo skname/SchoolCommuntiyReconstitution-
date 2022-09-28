@@ -1,0 +1,39 @@
+<view class="contain">
+    <view class="title">
+    <text style="font-size: 30rpx;">每个账号每天只可以扔或者捞三个微信哦！</text>
+    <text>自动匹配异性呦！</text>
+    </view>
+    <view class="card" bindtap="openFind">
+        <view >
+            <image src="{{icons[0]}}" mode="aspectFit"></image>
+        </view>
+        <view>
+            捞对象
+        </view>
+        <view class="detailNum"><text>男生人数：{{num.male}}</text><text>女生人数：{{num.female}}</text><text>今日次数：{{time}}/3</text></view>
+    </view>
+    <view class="card" bindtap="openThrow">
+        <view> 
+            <image src="{{icons[1]}}" mode="aspectFit"></image>
+        </view>
+        <view>
+            扔自己
+        </view>
+        <view class="detailNum"><text>今日次数：{{time}}/3</text></view>
+    </view>
+    <view class="window" wx:if="{{ isopen }}">
+        <view class="close" bindtap="close">×</view>
+        <view wx:if="{{throw}}" class="content">
+            <input type="text" placeholder="请输入您的微信" bindinput="getWeChat" maxlength="20"/>
+            <input type="text" placeholder="自我介绍：最多30字" bindinput="getIntroduce" maxlength="30"/>
+        </view>
+        <view wx:if="{{throw}}" class="submit" bindtap="submit">扔出去</view>
+        <view class="code" wx:if="{{find}}">
+            <view class="introduce">
+                <text user-select="true">微信号：{{wechat.wechat}}</text>
+                <text>介绍：{{wechat.introduce}}</text>
+            </view>
+            <button bindtap="findWechat">捞一下</button> 
+        </view> 
+    </view>
+</view>

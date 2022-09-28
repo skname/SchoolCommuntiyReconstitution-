@@ -1,0 +1,95 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/info/info",
+    "pages/space/space"
+  ],
+  "subpackages": [
+    {
+      "root": "packageIndex",
+      "pages": [
+        "messageBoard/index",
+        "look/look",
+        "GetWechat/index",
+        "webView/web",
+        "introduction/index",
+        "Calculator/calculator",
+        "Calculator/histroyScore"
+      ]
+    },
+    {
+      "root": "packA",
+      "pages": [
+        "info/joinus/index",
+        "info/cooperation/index",
+        "MyMessage/myMessage",
+        "reply/reply"
+      ]
+    },
+    {
+      "root": "packB",
+      "pages": [
+        "Person/index",
+        "send/send"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "packages": [
+        "packageIndex"
+      ],
+      "network": "all"
+    },
+    "pages/info/info": {
+      "packages": [
+        "packA",
+        "packB"
+      ],
+      "network": "all"
+    },
+    "pages/space/space": {
+      "packages": [
+        "packB"
+      ],
+      "network": "all"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#62D5C9",
+    "navigationBarTitleText": "太大扎堆屋",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 0,
+    "backgroundColor": "#ccc"
+  },
+  "debug": true,
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "icon/home.png",
+        "selectedIconPath": "icon/homeSelected.png"
+      },
+      {
+        "text": "动态",
+        "pagePath": "pages/space/space",
+        "iconPath": "icon/space.png",
+        "selectedIconPath": "icon/spaceSelected.png"
+      },
+      {
+        "text": "个人中心",
+        "pagePath": "pages/info/info",
+        "iconPath": "icon/info.png",
+        "selectedIconPath": "icon/infoSelected.png"
+      }
+    ],
+    "backgroundColor": "#F6F6FB",
+    "color": "#515151",
+    "selectedColor": "#62D5C9"
+  },
+  "plugins": {}
+}

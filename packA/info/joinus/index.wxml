@@ -1,0 +1,65 @@
+<view class="contain">
+    <view class="title">加入我们</view>
+    <view>
+    欢迎你朋友，当你来到这一页的时候，我们便有了一起工作的机会。
+    </view>
+    <view>
+    如果有机会，请听我细细道来。
+    </view>
+    <view>
+    此程序是同学们自主研发，没有老师和校方的任何介入。此程序目前尚不成熟，需要有更多的人来发展，改善它。因此我们需要大量人才来充实我们的团队，也是大学时光对我们自身的一个磨练。
+    </view>
+    <view>
+        以下职位长期有效
+    </view>
+    <view>
+        <view class="title">用户产品</view>
+        <view>
+            1. 负责校园业务的产品方向、功能设计用户增长分析工作。
+        </view>
+        <view>
+            2. 发掘用户的需求和痛点、提出有效解决方案、完成小程序功能逻辑。
+        </view>
+    </view>
+
+    <view>
+        <view class="title">UI设计</view>
+        <view>
+            1. 负责小程序页面布局、颜色搭配等等、优化用户体验。
+        </view>
+    </view>
+    <view>
+        <view class="title">前端开发</view>
+        <view>
+        1. 熟悉HTML/CSS/Javascript。
+        </view>
+        <view>
+        2. 熟悉vue/react前端框架和小程序开发生态。
+        </view>
+        <view>
+        3. 负责小程序交互设计、前后端分离
+        </view>
+    </view>
+    <view>
+        <view class="title">后端开发</view>
+        <view>
+            1. 熟练最少一种后端语言 Java/Golang/Node/PHP，并会其对应的流行框架。
+        </view>
+        <view>
+            2. 熟练使用 MySql/Mongodb、Redis、Nginx。 
+        </view>
+        <view>
+            3. 负责产品新功能的开发。
+        </view>
+    </view>
+    <view>
+        <view class="title">关于作者</view>
+        <view>
+            主要致力于前端开发，希望与你们共同学习，保持进步！
+        </view>
+        <view>
+            期待你的加入！
+        </view>
+        <view>有意向同学请联系微信：TD_Base</view>
+    </view>
+</view>

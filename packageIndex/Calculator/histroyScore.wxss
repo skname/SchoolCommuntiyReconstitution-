@@ -1,0 +1,24 @@
+.container {
+  background-color: white;
+}
+
+.item {
+  font-size: 35rpx;
+  width: 90%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx #ccc solid;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.time {
+  font-size: 30rpx;
+  color: darkgrey;
+}

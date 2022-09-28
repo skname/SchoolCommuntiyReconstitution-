@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="navigation">
+        <text class="item {{item.type == selected ? 'selected':''}}" wx:for="{{ navigationList }}" wx:key="index" data-type="{{ item.type}}" bindtap="clickEvent">{{ item.name }}</text>
+    </view> 
+<view class="content"> 
+<!-- 推广广告栏 -->
+    <view class="card"  wx:if="{{top.text}}">
+        <view id="head"><image src="{{icons[1]}}"></image>推广</view>
+        <view class="text" ><text user-select="true">{{top.text}}</text></view>
+        <view wx:if="{{top.to}}" bindtap="webView" data-src="{{top.to}}" class="webview">点击了解详情</view>
+                <!-- 九宫格 -->
+        <view class="image" wx:if="{{ top.imageBox.length >1 }}">
+            <image show-menu-by-longpress="true" lazy-load="true" wx:for="{{ top.imageBox }}" wx:key="index" data-type="{{ top.imageBox }}" data-index="{{index}}"  src="{{ item }}" bindtap="previewImg" mode="aspectFill"></image>
+        </view>
+        <view class="imagess" wx:if="{{ top.imageBox.length ==1 }}">
+            <image show-menu-by-longpress="true" lazy-load="true" wx:for="{{ top.imageBox }}" wx:key="index" data-type="{{ top.imageBox }}" data-index="{{index}}"  src="{{ item }}" bindtap="previewImg" mode="aspectFit"></image>
+        </view>
+    </view>
+    <view wx:for="{{ cardList }}" wx:key="index" wx:for-index="indexFF">
+    <!-- 说说文本框 -->
+        <card cardList="{{item}}" cancelLike="false" bind:reRenderLike="reRenderLike" bind:reRenderComment="reRenderComment" icon="{{icons[2]}}" indexFF="{{indexFF}}"/>
+    </view>
+</view> 
+    <!-- 发表 -->
+    <view class="public" bindtap="toURL">
+        <image src="{{icons[0]}}" mode="aspectFill"></image>
+    </view>
+</view>

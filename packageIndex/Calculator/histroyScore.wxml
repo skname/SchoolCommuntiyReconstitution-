@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="item" wx:for="{{list}}" wx:key="index">
+    <view class="left">
+      <text>{{item.name}}</text>
+      <text class="time">{{item.time}}</text>
+    </view >
+    <view class="right">{{item.totalScore}}</view>
+  </view>
+</view>
