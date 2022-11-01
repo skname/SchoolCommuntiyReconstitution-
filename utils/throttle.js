@@ -1,26 +1,25 @@
-export function throttle(delay, fn) {
+export function throttle(fn, delay) {
   let time = null;
-  return function () {
+  return function (...args) {
     if (time) {
       return false;
     }
-    fn && fn.apply(this, arguments);
+    fn.apply(this, args);
     time = setTimeout(() => {
       clearTimeout(time);
       time = null;
-    }, delay * 1000);
-    return true
+    }, delay);
   }
 }
 
 export function debounce(fn, delay) {
   let time = ''
-  return function (...arge) {
+  return function (...args) {
     if (time) {
       clearInterval(time);
     }
     time = setTimeout(() => {
-      fn.apply(this, arge);
+      fn.apply(this, args);
       clearInterval(time);
       time = ''
     }, delay);

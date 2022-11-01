@@ -1,0 +1,15 @@
+.radio-group {
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx;
+}
+
+.radio-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-item {
+  margin-top: 10rpx;
+}

@@ -1,0 +1,18 @@
+<view class="component-nav">
+  <scroll-view class="navTab" scroll-x="true">
+    <view wx:for="{{nav}}" bindtap="handleSelect" data-index="{{index}}" class="nav-item {{select == index ? 'select': ''}}" wx:key="id">
+      {{item.name}}
+    </view>
+    <view class="nav-slide" style="transform: translateX({{100*select + '%'}})"></view>
+  </scroll-view>
+
+  <!-- 置顶位置 -->
+  <view class="top-banner" wx:if="{{renderHtml!=''}}">
+    <rich-text nodes="{{renderHtml}}">
+    </rich-text>
+  </view>
+
+  <view class="content" style="margin-top: {{renderHtml!=''? '': '17vh'}};">
+    <slot></slot>
+  </view>
+</view>

@@ -1,0 +1,137 @@
+import {
+  init,
+  getClass,
+  handleClassEmit
+} from './index.js'
+import {
+  openGuide
+} from '../../utils/index.js'
+import {
+  Store
+} from '../../store/index.js'
+Page({
+  data: {
+    day: [{
+        name: '周一'
+      },
+      {
+        name: '周二'
+      },
+      {
+        name: '周三'
+      }, {
+        name: '周四'
+      },
+      {
+        name: '周五'
+      }
+    ],
+    isChecked: Store.status.isOpenClassEmit,
+    allClass: '',
+    selectIndex: [0, 0],
+    otherClass: '其它班级',
+    week: 0,
+    isMask: false
+  },
+  handleSelect() {
+    const currStatus = this.data.isChecked;
+    let title = currStatus ? '关闭后将无法推送课表！' : '请先关注公众号哦！';
+    openGuide.call(this, currStatus, title, () => {
+      this.setData({
+        isChecked: !currStatus
+      })
+      handleClassEmit.call(this) // 处理订阅课表状态
+    })
+
+  },
+  handleColumn(eventhandle) {
+    const {
+      column,
+      value
+    } = eventhandle.detail
+    let {
+      selectIndex,
+      allClass
+    } = this.data;
+    selectIndex[column] = value
+    if (column == 0) {
+      allClass[1] = allClass[0][value].classes;
+    }
+    this.setData({
+      selectIndex,
+      allClass
+    })
+  },
+  async handleChange(event) {
+    const {
+      value
+    } = event.detail
+    const {
+      allClass,
+      week
+    } = this.data;
+    const Class = allClass[0][value[0]].classes[value[1]];
+
+    // 发起请求重新渲染
+    if (Class.name == this.data.otherClass) return;
+    const table = await getClass(Class.name, week);
+    this.setData({
+      table,
+      otherClass: Class.name,
+      selectIndex: value
+    })
+  },
+  handleClick(event) {
+    this.setData({
+      isMask: true
+    })
+    const {
+      teacher
+    } = event.currentTarget.dataset
+    this.setData({
+      teacher
+    })
+  },
+  handleCloseMask() {
+    this.setData({
+      isMask: false
+    })
+  },
+  handleStatic() { // 不做处理
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
+    init.call(this);
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+
+  }
+
+})

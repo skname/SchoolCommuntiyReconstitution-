@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "Card": "/components/card/card"
-  },
-  "onReachBottomDistance": 50
-}

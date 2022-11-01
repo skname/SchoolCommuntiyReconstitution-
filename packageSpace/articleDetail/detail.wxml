@@ -1,0 +1,37 @@
+<view class="container" bindtap="closeInput">
+  <component-card id="component-card" wx:if="{{articleInfo !=null}}" class="card" articleInfo="{{articleInfo}}" isShowTitleAndFooter="{{false}}" isClickDetail="{{false}}" bind:sendCommont="sendCommont" data-type="1" data-aid="{{articleInfo.aid}}" data-nickname="{{articleInfo.nickName}}" />
+  <!-- 评论 -->
+  <view class="comment" wx:if="{{comments.length> 0}}">
+    <view id="{{'one'+item.comId}}" class="comment-item {{positionId == 'one'+item.comId ? 'newComment': ''}}" wx:for="{{comments}}" wx:key="index">
+      <view class="comment-item-left">
+        <image catchtap="handleRouter" src="{{item.headPic}}" data-openid="{{item.comOpenid}}" mode="aspectFill"></image>
+      </view>
+      <view class="comment-item-right" catchtap="sendCommont" data-type="2" data-nickname="{{item.nickName}}" data-replyopenid="{{item.comOpenid}}" data-comid="{{item.comId}}" data-aid="{{articleInfo.aid}}">
+        <view class="comment-nickName">{{item.nickName}}</view>
+        <view class="comment-content" user-select="true"> {{item.comContent}}</view>
+        <!-- 二级评论 -->
+        <view class="comment-child" wx:if="{{item.replyList.length> 0}}">
+          <view id="{{'two'+item.replyId}}" class="comment-child-item {{positionId == 'two'+item.replyId ? 'newComment': ''}}" data-type="2" wx:for="{{item.replyList}}" wx:key="index" catchtap="sendCommont" data-nickname="{{item.replyName}}" data-aid="{{articleInfo.aid}}" data-replyopenid="{{item.replyOpenid}}" data-comid="{{item.comId}}">
+            <text catchtap="handleRouter" data-openid="{{item.replyOpenid}}">{{item.replyName}}</text>
+            <text wx:if="{{item.nickName!=null}}" style="color:#000;">回复</text>
+            <text wx:if="{{item.nickName!=null}}" catchtap="handleRouter" data-openid="{{item.replyComOpenid}}">{{item.nickName}}</text>
+            <text>:</text>
+            <text style="color:#000;" user-select="true">{{item.replyContent}}</text>
+          </view>
+        </view>
+        <!-- 评论时间 -->
+        <view class="comment-time">
+          {{item.createTime}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else="{{comments.length == 0}}">
+    <component-load text="还没有评论,快来评论吧！"></component-load>
+  </view>
+  <!-- 评论框 -->
+  <view class="mask-content" catchtap="handleFocus" wx:if="{{isShow}}">
+    <textarea class="input" placeholder="回复{{nickName}}" cursor-spacing="20" maxlength="800" focus="{{isFocus}}" bindinput="handleInput"></textarea>
+    <view class="button" catchtap="submit">发送</view>
+  </view>
+</view>

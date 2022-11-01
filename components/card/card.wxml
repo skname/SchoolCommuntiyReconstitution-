@@ -1,51 +1,69 @@
-<view class="card" wx:for="{{ cardList }}" wx:key="indexF" wx:for-item="itemF" wx:for-index="indexF">
-  <view class="head">
-    <image wx:if="{{itemF.headPhoto!='sk'}}" bindtap="{{type=='default'?'openPerson':''}}" data-head="{{itemF.headPhoto}}" data-openid="{{itemF.openid}}" src="{{type=='default'?itemF.headPhoto: head}}" data-name="{{itemF.name}}" mode="aspectFill"></image>
-    <image wx:else src="{{icon}}" mode="aspectFill"></image>
-    <view>
-      <text style="font-size: 30rpx;">{{ type=='default'?itemF.name:name }}</text>
-      <text style="font-size: 26rpx; color: darkgrey;">{{ itemF.time}}</text>
+<view class="card" bindtap="{{isClickDetail? 'handleRouterAndParam': ''}}" data-detail="{{articleInfo}}" data-url="../../packageSpace/articleDetail/detail">
+  <!-- 文章标题类型 -->
+  <view wx:if="{{isShowTitleAndFooter}}" class="title">
+    <image class="icon" src="{{typeIcons[articleInfo.cid]}}" mode="aspectFit"></image>
+    <text style="color:{{nav[articleInfo.cid].color}}">{{nav[articleInfo.cid].name}}</text>
+    <view wx:if="{{isMine}}" mode="aspectFill" class="deleteButton" catchtap="handleDelete" data-aid="{{articleInfo.aid}}">
+      <image class="deleteIcon" src="{{icons[3]}}"></image>
     </view>
   </view>
-  <view class="text">
-    <text user-select="true">{{itemF.text}}</text>
-  </view>
-  <!-- 九宫格 -->
-  <view class="image" wx:if="{{ itemF.imageBox.length > 1 }}">
-    <image show-menu-by-longpress="true" lazy-load="true" wx:for="{{ itemF.imageBox}}" wx:key="index" data-type="{{ itemF.imageBox }}" data-index="{{index}}" src="{{'https://skself.work/static/imgs/'+ item }}" bindtap="previewImg" mode="aspectFill"></image>
-  </view>
-  <view class="imagess" wx:if="{{ itemF.imageBox.length == 1 }}">
-    <image show-menu-by-longpress="true" lazy-load="true" src="{{'https://skself.work/static/imgs/'+ itemF.imageBox[0]}}" mode="aspectFit" data-type="{{ itemF.imageBox }}" bindtap="previewImg"></image>
-  </view>
-  <!-- 底部图标 -->
-  <view class="bottom" wx:if="{{type=='default'&&cancelLike=='false'}}">
-    <view catchtap="giveComment" data-openid="{{itemF.openid}}" data-index="{{indexF}}" data-indexFF="{{indexFF}}" data-id="{{itemF._id}}">
-      <image src="{{icons[0]}}"></image>
-      <text>{{ itemF.comment.length }}</text>
+  <!-- 头像 -->
+  <view class="header">
+    <view class="headPic" catchtap="handleRouter" data-openid="{{articleInfo.openId}}" data-url="/packageInfo/myArticle/myArticle">
+      <image class="image" src="{{articleInfo.headPic}}" mode="aspectFill"></image>
     </view>
-    <view wx:if="{{!itemF.islike}}" bindtap="giveLike" data-index="{{indexFF}}" data-id="{{itemF._id}}" data-like="{{itemF.isLike}}" data-type="{{indexF}}" data-name="{{itemF.type}}">
-      <image src="{{icons[1]}}"></image>
-      <text>{{ itemF.isLike.length }}</text>
-    </view>
-    <view wx:else>
-      <image src="{{icons[2]}}"></image>
-      <text style="color:#07e8e2;">{{ itemF.isLike.length }}</text>
+    <view class="headInfo">
+      <text user-select="true">{{articleInfo.nickName}}</text>
+      <text class="create-time">{{articleInfo.createTime}}</text>
     </view>
   </view>
-  
-  <view wx:if="{{type=='my'}}" data-indexFF="{{indexFF}}" data-index="{{indexF}}" class="delete" bindtap="delete" data-id="{{itemF._id}}">删除</view>
-  <!-- 评论 -->
-  <view class="commentContain" wx:if="{{itemF.comment.length!=0}}">
-    <view wx:for="{{ itemF.comment }}" wx:key="index" catchtap="giveComment" data-id="{{itemF._id}}" data-indexFF="{{indexFF}}" data-openid="{{item.myopenid}}" data-index="{{indexF}}" data-name="{{item.name}}">
-      <text class="name">{{ item.name }}</text>
-      <text wx:if="{{item.toname}}">回复</text>
-      <text class="name" wx:if="{{item.toname}}">{{ item.toname }}</text>
-      <text>：</text>
-      <text>{{ item.text }}</text>
+  <!-- 文字内容 -->
+  <view class="content">
+    <text user-select="true" class="text">{{articleInfo.content}}</text>
+  </view>
+  <!-- 图片区域 -->
+  <view class="image-box" id="{{articleInfo.aid}}" wx:if="{{articleInfo.picInfos.length > 0}}">
+    <!-- 一张 -->
+    <view class="one-picture" wx:if="{{articleInfo.picInfos.length == 1}}">
+      <image catchtap="{{isClickDetail? '': 'preview'}}" data-imgs="{{isShowTitleAndFooter? '':articleInfo.picInfos}}" data-current="0" class="image-one" src="{{articleInfo.picInfos[0]}}" mode="aspectFit"></image>
+    </view>
+    <!-- 两张四张 -->
+    <view class="two-picture" wx:if="{{articleInfo.picInfos.length == 2 ||articleInfo.picInfos.length == 4}}">
+      <image wx:for="{{articleInfo.picInfos}}" catchtap="{{isClickDetail? '': 'preview'}}" data-imgs="{{isShowTitleAndFooter? '':articleInfo.picInfos}}" class="image" wx:key="index" data-current="{{index}}" src="{{item}}" mode="aspectFill"></image>
+    </view>
+    <!-- 多张 -->
+    <view class="many-picture imageBox" wx:if="{{articleInfo.picInfos.length != 4 && articleInfo.picInfos.length >2}}">
+      <image class="IMG" wx:for="{{articleInfo.picInfos}}" catchtap="{{isClickDetail? '': 'preview'}}" data-imgs="{{isShowTitleAndFooter ? '' :articleInfo.picInfos}}" data-current="{{index}}" wx:key="index" src="{{item}}" mode="aspectFill"></image>
     </view>
   </view>
-</view>
-<view class="input" wx:if="{{isopen}}">
-        <textarea name="comment" id="comment"  show-confirm-bar="{{false}}" auto-focus="true" bindblur="closeComment" bindinput="getComment" placeholder="回复{{placeholder}}:" bindkeyboardheightchange="getKey"></textarea>
-        <view class="button" type="primary" catchtap="submit">发送</view>
+  <!-- 菜单 -->
+  <view class="read-num">
+    <text>浏览量：{{articleInfo.readNum}}</text>
+    <view class="tipWin" catchtap="openShow" wx:if="{{!isShowTitleAndFooter}}">
+      <view class="bottom-menu">
+        <view class="func">
+          转载
+          <button class="shareButton" catchtap="hideShow" size="mini" open-type="share">分享</button>
+        </view>
+        <view class="func" catchtap="handleSend">
+          评论
+        </view>
+      </view>
+      <view style="width: 7vw;">
+        <image class="icon" src="{{icons[4]}}"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 点赞 -->
+  <view wx:if="{{isShowTitleAndFooter}}" class="footer">
+    <view class="footer-left">
+      <image class="icon" mode="aspectFit" src="{{icons[0]}}"></image>
+      <text class="text">{{articleInfo.commentNum}}</text>
+    </view>
+    <view class="footer-right" catchtap="{{articleInfo.isLiked?'cancelLike':'giveLike'}}">
+      <image wx:if="{{!articleInfo.isLiked}}" class="icon" mode="aspectFit" src="{{ icons[1]}}"></image>
+      <image wx:if="{{articleInfo.isLiked}}" class="icon" mode="aspectFit" src="{{ icons[2] }}"></image>
+      <text class="text" style="color:{{articleInfo.isLiked?'#62D5C9':''}}">{{articleInfo.click}}</text>
+    </view>
+  </view>
 </view>

@@ -1,0 +1,21 @@
+<view class="container">
+  <!-- 文章内容 -->
+  <view class="text">
+    <textarea name="text" id="text" placeholder="这一刻的想法" maxlength="800" model:value="{{content}}"></textarea>
+  </view>
+  <!-- 选择照片 -->
+  <select-image class="select-image" imageBox="{{imageBox}}" bind:reRenderImageBox="handleImageBox" />
+  <!-- 选择类别 -->
+  <view class="select-type">
+    <view class="title">发布类型</view>
+    <picker range="{{selectType}}" bindchange="handlePickChang" mode="selector" range-key="name" value="{{selectIndex}}">
+      <view class="currSelect">{{selectType[selectIndex].name}}</view>
+    </picker>
+    <view class="visibility" style="color:{{selectType[selectIndex].color}}">{{selectType[selectIndex].name}}</view>
+  </view>
+
+  <view class="common-button" bindtap="submit">
+    发布
+  </view>
+
+</view>

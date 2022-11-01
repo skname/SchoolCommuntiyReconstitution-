@@ -1,0 +1,18 @@
+<view class="heart-loading">
+  <ul class="ul">
+    <li class="line-1 li" style="--index: 1"></li>
+    <li class="line-2 li" style="--index: 2"></li>
+    <li class="line-3 li" style="--index: 3"></li>
+    <li class="line-4 li" style="--index: 4"></li>
+    <li class="line-5 li" style="--index: 5"></li>
+    <li class="line-6 li" style="--index: 6"></li>
+    <li class="line-7 li" style="--index: 7"></li>
+    <li class="line-8 li" style="--index: 8"></li>
+    <li class="line-9 li" style="--index: 9"></li>
+  </ul>
+  <view>
+    <text>
+      {{text}}
+    </text>
+  </view>
+</view>

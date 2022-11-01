@@ -1,0 +1,155 @@
+.container {
+  height: auto;
+  padding-bottom: 5vh;
+}
+
+.update-bottom {
+  position: absolute;
+  right: 0;
+  width: 120rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border-radius: 20rpx 0 0 20rpx;
+}
+
+.update-bottom .update-icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.head {
+  width: 100%;
+  background-color: #62D5C9;
+  position: fixed;
+  z-index: 100;
+}
+
+.inner {
+  box-sizing: border-box;
+  padding: 30rpx;
+  width: 92%;
+  margin: 70rpx 4%;
+  border-radius: 30rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.headPic {
+  display: flex;
+}
+
+.headPic image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+
+.headPic .content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+  justify-content: space-around;
+}
+
+.grade-box {
+  box-sizing: border-box;
+  margin: 30rpx 0rpx;
+  padding: 30rpx 0;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 9px #949494,
+    -5px -5px 9px #ffffff;
+}
+
+.first {
+  margin-top: 30vh;
+}
+
+.last {
+  margin-bottom: 10vh;
+}
+
+.grade-box-title {
+  font-weight: bold;
+  font-size: 36rpx;
+  text-align: center;
+  padding-bottom: 20rpx;
+}
+
+.td,
+.thead {
+  width: 90vw;
+  display: flex;
+}
+
+.td {
+  margin-top: 30rpx;
+}
+
+.th {
+  display: inline-block;
+  text-align: center;
+}
+
+.th-one {
+  font-weight: bolder;
+  padding-left: 30rpx;
+  text-align: left;
+  width: 45vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.th-two,
+.th-three,
+.th-four {
+  flex: 1;
+}
+
+
+.window {
+  position: absolute;
+  width: 70vw;
+  height: 20vh;
+  background-color: #fff;
+  border-radius: 20rpx;
+  left: 50%;
+  top: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 1s all;
+}
+
+.window .window-title {
+  color: #000;
+  font-size: 35rpx;
+  font-weight: bolder;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+}
+
+.window .content {
+  width: 100%;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.window .content input {
+  width: 25vw;
+  border-bottom: 1rpx solid #62D5C9;
+}
+
+.window .captchaUrl {
+  width: 250rpx;
+  height: 100rpx;
+}

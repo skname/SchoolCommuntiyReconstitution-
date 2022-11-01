@@ -1,50 +1,18 @@
 {
   "setting": {
-    "compileHotReLoad": false
+    "compileHotReLoad": false,
+    "urlCheck": false,
+    "useIsolateContext": false,
+    "lazyloadPlaceholderEnable": false
   },
   "condition": {
     "miniprogram": {
       "list": [
         {
           "name": "",
-          "pathName": "package/GetWechat/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/send/send",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/space/space",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/messageBoard/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/info/cooperation/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
           "pathName": "pages/info/info",
           "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/Person/index",
-          "query": "openid=o6UtZ4xHtCwsiFZ1OdQjNeeBB-R0&head=https%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FDYAIOgq83eq43f0HVSaJve7VyFRicGrHsFhXWkcLhk2ZFnzw61pBP7lX0w01NfJ3iaeuwKwic8FexAAyST4EYQMAQ%2F132",
+          "launchMode": "default",
           "scene": null
         },
         {
@@ -61,46 +29,7 @@
         },
         {
           "name": "",
-          "pathName": "package/swim/swim",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/swim/swim",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/messageBoard/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
           "pathName": "packB/send/send",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "packB/send/send",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/run/run",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/my/my",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -121,21 +50,133 @@
         },
         {
           "name": "",
-          "pathName": "package/match/match",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/order/order",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
           "pathName": "packageIndex/Calculator/calculator",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageStudentBind/studentBind/studentBind",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageInfo/personInfo/personInfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageInfo/myArticle/myArticle",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packB/send/send",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageIndex/getScore/score",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/space/space",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageSpace/send/send",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageSpace/articleDetail/detail",
+          "query": "detail=%7B%22aid%22%3A135%2C%22content%22%3A%22%E8%A1%8C%E5%90%97%22%2C%22openId%22%3A%22ogmE05DANfAYohNEgRGT8YPb91oM%22%2C%22cid%22%3A1%2C%22click%22%3A0%2C%22createTime%22%3A%2210%E6%9C%8805%2018%3A09%22%2C%22picInfo%22%3Anull%2C%22nickName%22%3A%22%E7%9F%B3%E6%A5%9E%22%2C%22headPic%22%3A%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Fhead-picture%2F2ece22fc8ce84a21b921c01a22ec2af3.jpg%22%2C%22picInfos%22%3A%5B%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Farticle-picture%2Fcc28afc017a843d78633cc75bfce11da.jpg%22%5D%2C%22readNum%22%3A0%2C%22comments%22%3Anull%7D",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageSpace/articleDetail/detail",
+          "query": "detail=%7B%22aid%22%3A135%2C%22content%22%3A%22%E8%A1%8C%E5%90%97%22%2C%22openId%22%3A%22ogmE05DANfAYohNEgRGT8YPb91oM%22%2C%22cid%22%3A1%2C%22click%22%3A0%2C%22createTime%22%3A%2210%E6%9C%8805%2018%3A09%22%2C%22picInfo%22%3Anull%2C%22nickName%22%3A%22%E7%9F%B3%E6%A5%9E%22%2C%22headPic%22%3A%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Fhead-picture%2F2ece22fc8ce84a21b921c01a22ec2af3.jpg%22%2C%22picInfos%22%3A%5B%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Farticle-picture%2Fcc28afc017a843d78633cc75bfce11da.jpg%22%5D%2C%22readNum%22%3A0%2C%22comments%22%3Anull%7D",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageIndex/getClass/table",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageSpace/articleDetail/detail",
+          "query": "detail=%7B%22aid%22%3A139%2C%22content%22%3A%22%E7%BE%8E%E5%A5%B3%22%2C%22openId%22%3A%22ogmE05G_tbZiErjNgGgjq-p-Ztr8%22%2C%22cid%22%3A0%2C%22click%22%3A0%2C%22createTime%22%3A%2210%E6%9C%8806%2022%3A36%22%2C%22picInfo%22%3Anull%2C%22nickName%22%3A%22%E6%84%BF%E9%A3%8E%E8%BD%BD%E5%B0%98%22%2C%22headPic%22%3A%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Fhead-picture%2F797c9a66a9ec49ab853d27d4f5c0e82f.jpg%22%2C%22picInfos%22%3A%5B%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Farticle-picture%2F60e7dcfbb9d34b4c9eca66e04e3e297d.jpg%22%2C%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Farticle-picture%2Ffa916455d43b4543a7c1a1d4e31d835b.jpg%22%2C%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Farticle-picture%2F104187f5ad2345ce89eb4958002c73ff.jpg%22%2C%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Farticle-picture%2Fff21d16b46b24d9593c0d1c1656d15f2.jpg%22%2C%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Farticle-picture%2Fafba167a3c944b7a884ececa8d730565.jpg%22%2C%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Farticle-picture%2Fbb09cbe13b9c4affbaa7a93e1b0f1bab.jpg%22%2C%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Farticle-picture%2Fa9b1b56f2074416ca9ea68355138d241.jpg%22%5D%2C%22readNum%22%3A0%2C%22commentNum%22%3A0%7D",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageInfo/myArticle/myArticle",
+          "query": "detail=%7B%22openId%22%3A%22ogmE05DANfAYohNEgRGT8YPb91oM%22%2C%22stuNumber%22%3A%22%22%2C%22userInfo%22%3A%22%E5%A4%A9%E4%B8%8B%E7%AC%AC%E4%B8%80%22%2C%22headPic%22%3A%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Fhead-picture%2Fb462185aa19a41b7a8af8ad525236670.jpg%22%2C%22userSex%22%3A%22%E7%94%B7%22%2C%22status%22%3A1%2C%22createTime%22%3A%222022-09-28%2000%3A00%22%2C%22updateTime%22%3A%222022-09-28%2000%3A00%22%2C%22nickName%22%3A%22%E4%BD%A0%E8%AF%B4%E7%9A%84%E4%BD%A0%E7%88%B1%E6%88%91%22%7D",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageInfo/myArticle/myArticle",
+          "query": "detail=%7B%22openId%22%3A%22ogmE05DANfAYohNEgRGT8YPb91oM%22%2C%22stuNumber%22%3A%22%22%2C%22userInfo%22%3A%22%E5%A4%A9%E4%B8%8B%E7%AC%AC%E4%B8%80%22%2C%22headPic%22%3A%22http%3A%2F%2Frj5r31csp.hb-bkt.clouddn.com%2Fhead-picture%2Fb462185aa19a41b7a8af8ad525236670.jpg%22%2C%22userSex%22%3A%22%E7%94%B7%22%2C%22status%22%3A1%2C%22createTime%22%3A%222022-09-28%2000%3A00%22%2C%22updateTime%22%3A%222022-09-28%2000%3A00%22%2C%22nickName%22%3A%22%E4%BD%A0%E8%AF%B4%E7%9A%84%E4%BD%A0%E7%88%B1%E6%88%91%22%2C%22isMine%22%3Atrue%7D",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageIndex/getClass/table",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageIndex/getScore/score",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageSpace/myMessage/myMessage",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageIndex/signIn/sigin",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageIndex/youthLearning/learn",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -144,5 +185,5 @@
     }
   },
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "libVersion": "2.26.0"
+  "libVersion": "2.25.4"
 }

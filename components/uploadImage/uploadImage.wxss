@@ -1,0 +1,48 @@
+.upload-image {
+  margin: 20rpx 0;
+  width: 100vw;
+  background-color: #fff;
+}
+
+.imageBox-title {
+  padding-top: 20rpx;
+  width: 94%;
+  margin-left: 3%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectImg {
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  border: 1rpx solid #62D5C9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 用来清除元素事件 */
+.img-close {
+  pointer-events: none;
+}
+
+.img-close::before {
+  content: '×';
+  color: #fff;
+  font-size: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  width: 50rpx;
+  height: 50rpx;
+  background-color: rgba(207, 206, 206, 0.658);
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 10rpx;
+  pointer-events: auto;
+}
+
+.IMAGEBOX .selectImg .image-one {
+  width: 12vw;
+  height: 12vw;
+}

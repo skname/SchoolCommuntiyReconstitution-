@@ -1,0 +1,100 @@
+.person {
+  width: 100vw;
+  background-color: #f5f6f6;
+}
+
+.person-header {
+  width: 100%;
+  height: 30vh; 
+  position: relative;
+}
+
+.person .back,
+.person .userInfo {
+  width: 100%;
+  height: 100%; 
+  position: absolute;
+} 
+
+.person .userInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 60rpx;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.person .userInfo .up {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.person .userInfo .up .gender {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+
+.up-text {
+  margin-left: 30rpx;
+  font-size: 35rpx;
+  font-weight: bolder;
+}
+
+.person .userInfo .up image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+
+.person .userInfo .down {
+  flex: 1;
+  padding-top: 50rpx;
+}
+
+.person .numInfo {
+  width: 100%;
+  height: 13vh;
+  display: flex;
+  color: rgb(99, 99, 99);
+  font-size: 30rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  box-shadow: 0 10rpx 20rpx 1rpx rgb(165, 165, 165);
+}
+
+.person .userInfo .right,
+.person .numInfo view {
+  display: flex;
+  flex-direction: column;
+}
+
+.person .numInfo view {
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.person .numInfo view .num {
+  font-size: 45rpx;
+  font-weight: bolder;
+}
+
+.person .card-list {
+  width: 100%;
+  height: auto;
+}
+
+.one {
+  color: #3DB24E;
+}
+
+.two {
+  color: #F17B23;
+}
+
+.three {
+  color: #0F7FE8;
+}

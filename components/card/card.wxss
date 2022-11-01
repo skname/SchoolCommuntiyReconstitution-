@@ -1,141 +1,172 @@
 .card {
   width: 100%;
-  height: auto;
-  margin-top: 20rpx;
+  padding: 0 2vw;
+  margin: 30rpx 0;
+  border-radius: 50rpx;
   background-color: #fff;
-  border-radius: 30rpx;
-  padding-bottom: 20rpx;
-  opacity: 1;
-}
-.card .text,.head,.image{
-  width: 94%;
-  margin-left: 3%;
-  padding-top: 20rpx;
-}
-.head{
-  display: flex;
-  flex-direction: row;
-}
-
-.head view{
-  display: flex;
-  flex-direction: column;
-  margin-left: 20rpx;
-  justify-content:  space-around;
-
-}
-/* 设置头像大小 */
-.head image{
-  width: 95rpx;
-  height: 95rpx;
-  border-radius: 50%;
   overflow: hidden;
-}
-.card .text{
-  padding-bottom: 20rpx;
+  box-sizing: border-box;
 }
 
-.card .bottom{
-  display: flex;
-  flex-direction: row;
-  border-top: 3rpx solid #eeecec;
-  height: 5vh;
-}
-.card .bottom view{
-  flex-grow: 1;
+.card .title {
+  width: 100%;
+  padding: 20rpx 0;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:center;
+  position: relative;
 }
-/* 点赞图片高度 */
-.bottom image {
+
+.card .title .icon {
+  width: 3vh;
+  height: 3vh;
+  padding: 0 20rpx;
+}
+
+.card .header {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 0;
+}
+
+/* 头像大小 */
+.card .header .headPic,
+.card .header .headPic .image {
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.card .headInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 30rpx;
+}
+
+.create-time {
+  color: rgb(184, 183, 183);
+  font-size: 30rpx;
+}
+
+.card .content {
+  line-height: 1.5;
+}
+
+.card .image-box {
+  padding: 20rpx 0;
+}
+
+.card .image-box .one-picture {
+  text-align: center;
+}
+
+
+.card .image-box .two-picture {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card .image-box .two-picture .image {
+  margin: 10rpx 0;
+  width: 46vw;
+  height: 46vw;
+}
+
+.card .many-picture {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card .two-picture .image {
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.card .read-num {
+  color: #ccc;
+  font-size: 30rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card .read-num .tipWin {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+}
+
+.card .read-num .bottom-menu {
+  width: 0;
+  overflow: hidden;
+  border-radius: 10rpx;
+  position: absolute;
+  top: -1.5vh;
+  right: 4vh;
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  background-color: rgb(59, 59, 59);
+}
+
+.card .read-num .bottom-menu .func {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx;
+  white-space: nowrap;
+  position: relative;
+}
+
+.func .shareButton {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.card .footer {
+  display: flex;
+  flex-direction: row;
+  height: 4vh;
+  padding-bottom: 20rpx;
+}
+
+.card .footer .footer-right,
+.card .footer .footer-left {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .text {
+  margin-left: 10rpx;
+}
+
+.card .footer .icon,
+.card .read-num .icon {
   height: 3vh;
   width: 3vh;
 }
-.image {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.image image{
-  width: 29vw;
-  height: 29vw;
-  margin-bottom: 10rpx;
-  border-radius: 10rpx;
-}
 
-.commentContain{
-  width: 90%;
-  margin-left: 7%;
-  border-radius: 10rpx;
-  font-size: 28rpx;
-  background-color: rgba(248, 243, 243, 0.568);
-  padding-left: 10rpx;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
-}
-.commentContain view{
-  padding: 5rpx 0rpx;
-}
-.commentContain .name{
-  color: #62D5C9;
-}
-
-.input{
-  width: 100%;
-  height: 8vh;
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  bottom: 450rpx;
-  background-color: #F7F7F7;
-}
-.input textarea{
-  margin-left: 3%;
-  width: 78vw;
-  height: 6vh;
-  box-sizing: border-box;
-  padding: 5rpx 10rpx;
-  border-radius: 10rpx;
-  background-color: #fff;
-  margin-bottom: 1vh;
-  margin-top: auto;
-}
-.input .button{
-  width: 15vw;
-  height: 6vh;
-  background-color: #07C160;
-  border-radius: 15rpx;
-  font-size: 25rpx;
-  display: flex;
-  align-items: center;
-  color: #fff;
-  justify-content: center;
-  margin-left: 1vw;
-  margin-bottom: 1vh;
-  margin-top: auto;
-}
-.imagess{
-  width: 94%;
-  margin-left: 3%;
-}
-
-.delete{
-  margin-top: 20rpx;
-  width: 100rpx;
-  height: 50rpx;
+.deleteButton {
   margin-left: auto;
-  margin-right: 3vw;
-  background-color: rgb(240, 82, 82);
-  border-radius: 20rpx;
-  color: white;
-  font-size: 25rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-right: 20rpx;
+  line-height: 60rpx;
+  text-align: center;
+  width: 100rpx;
+  height: 60rpx;
 }
 
-
-
+.deleteButton .deleteIcon {
+  width: 40rpx;
+  height: 40rpx;
+}

@@ -1,0 +1,20 @@
+.picker-component {
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+
+.picker-item {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20rpx;
+  text-align: right;
+}
+
+.title {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 20rpx;
+  transform: translateY(-50%);
+}

@@ -8,8 +8,8 @@ export function setStorage(key, data, isSync = false) {
     data
   })
 }
-
-export function getStorage(key, isSync = false) {
+// 异步获取缓存
+export function getStorage(key) {
   return new Promise((res, rej) => {
     wx.getStorage({
       key,
@@ -22,26 +22,26 @@ export function getStorage(key, isSync = false) {
     })
   })
 }
+//  同步获取缓存
 export function getStorageSync(key) {
   let value;
   try {
     value = wx.getStorageSync(key);
     if (value) return JSON.parse(value)
   } catch (err) {
-    console.log(err)
+    return ''
   }
 }
-
+// 删除缓存
 export function removeStorage(key) {
-  return new Promise((res, rej) => {
-    wx.removeStorage({
-      key,
-      success: data => {
-        res(data);
-      },
-      fail: err => {
-        rej(err);
-      }
-    })
+  wx.removeStorage({
+    key
+  }).then(value => {}, err => {});
+}
+
+// 清空所有缓存
+export function removeAllStorage() {
+  wx.clearStorage({
+    success: (res) => {},
   })
 }

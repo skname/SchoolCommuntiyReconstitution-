@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="header">
+    <view class="headPic" bindtap="handleUpdateHeadPic">
+      <image src="{{headPic}}" mode="aspectFill"></image>
+    </view>
+  </view>
+  <!-- 绑定信息 -->
+  <!-- <view class="studentInfo" wx:if="{{isBind}}">
+    <view class="studentInfo-item">姓名：{{studentNum.name}}</view>
+    <view class="studentInfo-item">学号：{{studentNum.id}}</view>
+    <view class="studentInfo-item">班级：{{studentNum.classNo}}</view>
+    <view class="studentInfo-item">系别：{{studentNum.department}}</view>
+  </view> -->
+  <!-- 用户信息 -->
+  <view class="userInfo">
+    <view id="nickName" class="userInfo-item {{focusId == 'nickName' ? 'userInfo-item-foucs': ''}}" bindtap="handleFocus">
+      <text class="title">昵称</text>
+      <input type="text" maxlength="7" focus="{{focusId == 'nickName'}}" model:value="{{nickName}}" />
+    </view>
+    <view id="userSex" class="userInfo-item {{focusId == 'userSex' ? 'userInfo-item-foucs': ''}}" bindtap="handleFocus">
+      <text class="title">性别</text>
+      <text>{{userSex}}</text>
+      <picker range="{{selectSex}}" bindchange="handlePickChang" range-key="name" value="{{index}}" class="selectSex">
+        <view class="currSelect">{{selectSex[index].name}}</view>
+      </picker>
+    </view>
+    <view id="userInfo" class="userInfo-item {{focusId == 'userInfo' ? 'userInfo-item-foucs': ''}}" bindtap="handleFocus">
+      <text class="title">个性签名</text>
+      <textarea class="textarea" type="text" focus="{{focusId == 'userInfo'}}" maxlength="20" model:value="{{userInfo}}" />
+    </view>
+    <view class="userInfo-item last-item">
+      <text class="title">创建时间</text>
+      <text>{{createTime}}</text>
+    </view>
+  </view>
+  <view class="common-button button" bindtap="handleUpdate">保存</view>
+</view>

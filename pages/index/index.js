@@ -1,90 +1,91 @@
 import {
-  req
-} from '../../utils/Req'
-import {
-  ToApp
-} from '../../utils/toOtherApp';
-import {
-  imgStorage,
-  getImgs
-} from '../../utils/imgStorage';
-import {
-  isLogin
-} from '../../utils/Status/index';
+  routerValidatorTo,
+  ToApp,
+  isDef,
+  iconStorage,
+  INDEX_ICON,
+  getAction,
+  toWeb
+} from '../../utils/index.js';
 Page({
   data: {
-    isopen: true,
-    reply: '',
-    imageBox: '',
-    icons: [
-      'https://skself.work/static/icon/messageBorad.png',
-      'https://skself.work/static/icon/find1.png',
-      'https://skself.work/static/icon/print.png',
-      'https://skself.work/static/icon/message.png',
-    ],
+    bannerBox: [],
+    icons: iconStorage.get(INDEX_ICON),
     menus: [{
         id: 0,
-        name: '暗恋 吧',
-        url: '/packageIndex/messageBoard/index'
+        name: '成绩查询',
+        url: '/packageIndex/getScore/score',
       },
       {
         id: 1,
-        name: '捞微信',
-        url: '/packageIndex/GetWechat/index'
+        name: '课表查询',
+        url: '/packageIndex/getClass/table',
       },
       {
         id: 2,
+        name: '青年大学习',
+        url: '/packageIndex/youthLearning/learn'
+      },
+      {
+        id: 3,
         name: '体测计算器',
-        url: '/packageIndex/Calculator/calculator'
+        url: '/packageCalculator/Calculator/calculator',
+        loginable: false,
+        bindable: false
+      },
+      {
+        id: 4,
+        name: '签到打卡',
+        url: '/packageIndex/signIn/sigin',
+      }
+    ],
+    otherMenus: [{
+        appId: 'wx7e6ca8d9aa60e615',
+        id: 5,
+        name: '远程打印',
+        url: 'pages/appoint/main'
+      },
+      {
+        id: 6,
+        name: '四六级查询',
+        url: 'packageResultQuery/pages/cet_his/CET_Result_His_Portal',
+        appId: 'wxa56afc785454c86b'
+      },
+      {
+        id: 7,
+        name: '教资查询',
+        url: 'jiaoyubu/pages/business/ntceScore/fillInfo/fillInfo',
+        appId: 'wx2eec5fb00157a603'
       }
     ]
   },
+  routerTo: routerValidatorTo,
   toweb(e) {
     let {
       src
-    } = e.currentTarget.dataset
-    wx.navigateTo({
-      url: `/package/webView/web?src=${src}`,
-    })
+    } = e.currentTarget.dataset;
+    if (!isDef(src)) return;
+    toWeb(src)
   },
-
-  toPrint() {
-    ToApp('wx7613a90097b68222');
+  toApp(event) {
+    const {
+      appid,
+      url
+    } = event.currentTarget.dataset
+    ToApp(appid, url);
   },
-  async onLoad() {
-    getImgs.call(this, 'iconIndex');
-    if (!await isLogin()) {
-      const imageBox = await req('/getBanner', 'get')
+  onLoad() {
+    getAction('/banner/list').then(({
+      data
+    }) => {
       this.setData({
-        imageBox,
-        reply: 0
+        bannerBox: data
       })
-      wx.setStorageSync('reply', 0);
-      return;
-    }
-    let openidd = wx.getStorageSync('openid');
-    Promise.all([req(`/getReply?openid=${openidd}&&num=1`, 'get'), req('/getBanner', 'get')]).then(res => {
-      const replyNum = Number(res[0]);
-      this.setData({
-        imageBox: res[1],
-        reply: replyNum
-      })
-      wx.setStorageSync('reply', replyNum);
     })
   },
-  async onReady() {
-    imgStorage(this.data.icons, 'iconIndex');
-  },
-  onShow() {
-    let reply = wx.getStorageSync('reply');
-    this.setData({
-      reply
-    })
-  },
+  handleLoad() {},
   onShareAppMessage: function () {
-    return {
-
-    }
+    return {}
   },
   onShareTimeline() {
     return {

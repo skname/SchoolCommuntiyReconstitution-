@@ -1,0 +1,41 @@
+<view class="container">
+  <component-select class="notice-component" isChecked="{{isChecked}}" bind:handleSelect="handleSelect">开启上课提醒</component-select>
+  <view class="content">
+    <view class="content-left">
+      <view>1</view>
+      <view>2</view>
+      <view>3</view>
+      <view>4</view>
+    </view>
+    <view class="content-right">
+      <view class="content-right-title">
+        <view wx:for="{{day}}" wx:key="index">{{item.name}}</view>
+      </view>
+      <view class="content-right-content">
+        <!-- 课表 -->
+        <view class="column" wx:for="{{table}}" wx:key="index">
+          <view class="row" style="background-color: {{item.color}}" wx:for="{{item}}" wx:key="index" catchtap="{{item != 0 ? 'handleClick': ''}}" data-teacher="{{item.teacher}}">
+            <text wx:if="{{item != 0}}">{{"@"+item.time+ ' '+item.classroom}}</text>
+            <text wx:if="{{item != 0}}">{{item.class}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view>{{class}}</view>
+    <view>第{{week}}周</view>
+    <view>
+      <picker range="{{allClass}}" bindchange="handlePickChang" mode="multiSelector" value="{{selectIndex}}" range-key="name" bindcolumnchange="handleColumn" bindchange="handleChange">
+        <view class="currSelect">{{otherClass}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="golbal-mask" catchtap="handleCloseMask" wx:if="{{isMask}}">
+    <view class="pop-window" catchtap="handleStatic">
+      <view>老师：{{teacher}}</view>
+      <view></view>
+    </view>
+  </view>
+</view>

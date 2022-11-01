@@ -1,7 +1,8 @@
 {
   "usingComponents": {
-    "card" : "/components/card/card"
+    "component-nav" : "/components/Nav/Nav",
+    "component-card" : "/components/card/card"
   },
-  "onReachBottomDistance": 100,
+  "onReachBottomDistance": 200,
   "enablePullDownRefresh": true
 }

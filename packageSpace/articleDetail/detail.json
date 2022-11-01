@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "component-card": "/components/card/card",
+    "component-load": "/components/load/load"
+  },
+  "enablePullDownRefresh": true
+}

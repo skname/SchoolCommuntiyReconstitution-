@@ -1,0 +1,24 @@
+.notice,
+.notice-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.notice-title {
+  align-items: center;
+}
+
+.notice {
+  width: 100%;
+  height: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notice .notice-icon {
+  width: 50rpx;
+  height: 50rpx;
+}

@@ -1,0 +1,88 @@
+.header,
+.headPic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userInfo .userInfo-item,
+.studentInfo-item {
+  position: relative;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid rgb(241, 241, 241);
+}
+
+.userInfo .userInfo-item input {
+  text-align: right;
+}
+
+#userInfo {
+  display: flex;
+  align-items: flex-start;
+}
+
+.userInfo .userInfo-item .textarea {
+  height: 5vh;
+  text-align: right;
+}
+
+.userInfo .last-item {
+  border-bottom: none;
+}
+
+.userInfo .userInfo-item-foucs {
+  transition: .5s all;
+  border-bottom: 1rpx solid rgb(35, 226, 201);
+}
+
+.userInfo .userInfo-item .title {
+  flex-shrink: 0;
+  margin-right: 100rpx;
+}
+
+.header {
+  width: 100%;
+  height: 25vh;
+}
+
+.header .headPic {
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  box-shadow: 0 0 10rpx 5rpx rgb(145, 144, 144);
+}
+
+.header image {
+  width: 14vh;
+  height: 14vh;
+  border-radius: 50%;
+}
+
+.userInfo,
+.studentInfo {
+  width: 100%;
+  background-color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.currSelect,
+.selectSex,
+.userInfo .userInfo-item {
+  width: 100%;
+  height: 6vh;
+}
+
+.selectSex {
+  position: absolute;
+  opacity: 0;
+}
+
+.button {
+  position: absolute;
+  bottom: 10vh;
+}

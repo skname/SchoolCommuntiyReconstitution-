@@ -1,0 +1,19 @@
+<view class="container">
+  <component-select isChecked="{{isChecked}}" bind:handleSelect="handleSelect" class="notice-component">开启消息提醒</component-select>
+  <view wx:for="{{list}}" class="list-item" wx:key="index" bindtap="handleRouterAndParam" data-index="{{index}}" data-detail="{{item.articleInfo}}" data-positionid="{{item.positionId}}" data-url="/packageSpace/articleDetail/detail">
+    <view class="left">
+      <image class="headPic" mode="aspectFill" src="{{item.replyHeadPic}}"></image>
+      <view class="middle">
+        <view class="nickName">{{item.replyNickName}}</view>
+        <view class="type">
+          <text wx:if="{{item.type == 1}}" style="color: cornflowerblue;">回复你</text>
+          <text wx:if="{{item.type == 1}}" style="margin-left:20rpx;">{{item.content}}</text>
+          <text wx:if="{{item.type == 0}}" style="color: darkorange;">为你点赞!</text>
+        </view>
+      </view>
+    </view>
+    <view class="time">
+      {{item.createTime}}
+    </view>
+  </view>
+</view>

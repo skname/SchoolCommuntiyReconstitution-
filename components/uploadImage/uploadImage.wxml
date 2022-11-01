@@ -1,0 +1,13 @@
+<view class="upload-image">
+  <view class="imageBox-title">
+    <text>选择图片</text>
+    <text>{{imageBox.length}}/9</text>
+  </view>
+  <view class="IMAGEBOX">
+    <image class="IMG  {{deleteable ? 'img-close': ''}}" wx:for="{{imageBox}}" wx:key="index" src="{{item}}" mode="aspectFill" data-index="{{index}}" bindtap="{{deleteable ? 'handlDelete':''}}">
+    </image>
+    <view wx:if="{{deleteable && imageBox.length != 9}}" class="IMG selectImg" bindtap="handleSelectImage">
+      <image class="image-one" src="{{icons[0]}}" mode="aspectFill"></image>
+    </view>
+  </view>
+</view>

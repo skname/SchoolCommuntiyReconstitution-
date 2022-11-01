@@ -1,0 +1,6 @@
+<view class="picker-component">
+  <text class="title">{{title}}</text>
+  <picker class="picker-item" range="{{ranges}}" range-key="{{rangeKey}}" value="{{select}}" bindchange="handlePickChang">
+    {{ranges[select].value}}
+  </picker>
+</view>

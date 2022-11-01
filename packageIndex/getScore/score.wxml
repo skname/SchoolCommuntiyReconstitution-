@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="head">
+    <view class="inner" wx:if="{{department!= undefiend}}">
+      <view class="update-bottom" catchtap="openUpdate">
+        <image class="update-icon" src="{{icons[0]}}" mode="aspectFill"></image>
+      </view>
+      <view class="headPic">
+        <image src="{{headPic}}" mode="aspectFill" bindtap="handlePreview" data-current="0" data-imgs="{{[headPic]}}"></image>
+        <view class="content">
+          <text>{{name}}</text>
+          <text>{{id}}</text>
+          <text>{{department +''+ classNo}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="grade-box  {{index == 0 ? 'first': ''}}" wx:for="{{terms}}" wx:key="index">
+    <view class="grade-box-title">{{item.name}}</view>
+    <view class="thead">
+      <text class="th-one th">课程</text>
+      <text class="th-two th">类型</text>
+      <text class="th-three th">学分</text>
+      <text class="th-four th">成绩</text>
+    </view>
+    <view class="td" wx:for="{{item.grade}}" wx:key="cid">
+      <text class="th-one th">{{item.name}}</text>
+      <text class="th-two th">{{item.attribute}}</text>
+      <text class="th-three th">{{item.scorepoint}}</text>
+      <text class="th-four th">{{item.score}}</text>
+    </view>
+  </view>
+
+  <view class="golbal-mask" wx:if="{{isShow}}" catchtouchmove="handleScroll" catchtap="closeMask">
+    <view class="window" catchtap="handleFouse">
+      <text class="window-title">请输入验证码</text>
+      <view class="content">
+        <input type="text" bindinput="handleInputChange" focus="{{true}}" maxlength="4"/>
+        <image class="captchaUrl" src="{{captchaUrl}}"></image>
+      </view>
+    </view>
+  </view>
+</view>

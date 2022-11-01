@@ -1,0 +1,7 @@
+<view class="notice">
+  <view class="notice-title">
+    <image mode="aspectFill" src="{{icons[0]}}" class="notice-icon"></image>
+    <text class="text"><slot></slot></text>
+  </view>
+  <switch checked="{{isChecked}}" bindchange="handleSelect"></switch>
+</view>

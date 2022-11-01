@@ -1,0 +1,34 @@
+<view class=" person">
+  <view class="person-header">
+    <image class="back" src="{{icons[2]}}"></image>
+    <view class="userInfo">
+      <view class="up">
+        <image src="{{userInfo.headPic}}" bindtap="preview" data-current="0" data-imgs="{{[userInfo.headPic]}}" mode="aspectFill"></image>
+        <text class="up-text">{{userInfo.nickName}}</text>
+        <image class="gender" mode="aspectFit" src="{{userInfo.userSex == '男'? icons[0] : icons[1] }}"></image>
+      </view>
+      <view class="down">
+        <text>{{userInfo.userInfo}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="numInfo">
+    <view>
+      <view class="num one">{{userInfo.publishNum}}</view>
+      <view>发布</view>
+    </view>
+    <view>
+      <view class="num two"> {{userInfo.glanceNum}}</view>
+      <view>浏览量</view>
+    </view>
+    <view>
+      <view class="num three">{{userInfo.likedNum}}</view>
+      <view>获赞</view>
+    </view>
+  </view>
+  <view class="card-list">
+    <view wx:for="{{cardList}}" wx:key="index">
+      <component-card isMine="{{isMine}}" wx:for="{{item}}" wx:key="index" articleInfo="{{item}}" />
+    </view>
+  </view>
+</view>

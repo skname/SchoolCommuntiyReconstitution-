@@ -1,37 +1,51 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/info/info",
-    "pages/space/space"
+    "pages/space/space",
+    "pages/info/info"
   ],
   "subpackages": [
     {
       "root": "packageIndex",
       "pages": [
-        "messageBoard/index",
-        "look/look",
-        "GetWechat/index",
         "webView/web",
-        "introduction/index",
+        "getScore/score",
+        "getClass/table",
+        "signIn/sigin",
+        "youthLearning/learn"
+      ]
+    },
+    {
+      "root": "packageSpace",
+      "pages": [
+        "send/send",
+        "articleDetail/detail",
+        "myMessage/myMessage"
+      ]
+    },
+    {
+      "root": "packageInfo",
+      "pages": [
+        "personInfo/personInfo",
+        "myArticle/myArticle",
+        "cooperation/index",
+        "joinus/index"
+      ]
+    },
+    {
+      "root": "packageCalculator",
+      "pages": [
         "Calculator/calculator",
         "Calculator/histroyScore"
-      ]
+      ],
+      "independent": true
     },
     {
-      "root": "packA",
+      "root": "packageStudentBind",
       "pages": [
-        "info/joinus/index",
-        "info/cooperation/index",
-        "MyMessage/myMessage",
-        "reply/reply"
-      ]
-    },
-    {
-      "root": "packB",
-      "pages": [
-        "Person/index",
-        "send/send"
-      ]
+        "studentBind/studentBind"
+      ],
+      "independent": true
     }
   ],
   "preloadRule": {
@@ -43,14 +57,13 @@
     },
     "pages/info/info": {
       "packages": [
-        "packA",
-        "packB"
+        "packageInfo"
       ],
       "network": "all"
     },
     "pages/space/space": {
       "packages": [
-        "packB"
+        "packageSpace"
       ],
       "network": "all"
     }
@@ -58,7 +71,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#62D5C9",
-    "navigationBarTitleText": "太大扎堆屋",
+    "navigationBarTitleText": "太大的圈儿",
     "navigationBarTextStyle": "white",
     "onReachBottomDistance": 0,
     "backgroundColor": "#ccc"
@@ -91,5 +104,10 @@
     "color": "#515151",
     "selectedColor": "#62D5C9"
   },
-  "plugins": {}
+  "lazyCodeLoading": "requiredComponents",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
 }

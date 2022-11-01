@@ -1,0 +1,22 @@
+.uploadImage,
+.remark,
+.radio-component,
+.key {
+  width: 100%;
+}
+
+.common-button {
+  background-color: rgb(65, 236, 142);
+}
+
+.picker-component,
+.key {
+  width: 100%;
+  background-color: #fff;
+}
+
+.key {
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}

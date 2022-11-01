@@ -1,0 +1,144 @@
+.container {
+  min-height: 100vh;
+  height: 100%;
+}
+
+.card,
+.comment {
+  width: 100vw;
+}
+
+.comment {
+  box-sizing: border-box;
+  padding-bottom: 5vh;
+}
+
+.comment .comment-item {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 20rpx;
+  border-bottom: 2rpx rgba(221, 220, 220, 0.541) solid;
+  background-color: #fff;
+}
+
+.comment-item .comment-item-left {
+  flex-shrink: 0;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.comment-item .comment-item-left image {
+  width: 100%;
+  height: 100%;
+}
+
+.comment-item .comment-item-right {
+  width: 100%;
+  margin-left: 30rpx;
+}
+
+.comment-item-right .comment-nickName,
+.comment-item-right .comment-content {
+  margin-top: 10rpx;
+}
+
+.comment-item-right .comment-content {
+  width: 100%;
+}
+
+/* 二级评论 */
+.comment-item-right .comment-child {
+  font-size: 28rpx;
+  color: cornflowerblue;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: rgba(231, 229, 229, 0.521);
+}
+
+.comment-item-right .comment-child .comment-child-item {
+  padding: 20rpx 0;
+}
+
+.comment-item-right .comment-time {
+  margin-top: 10rpx;
+  color: #ccc;
+}
+
+.comment-button {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 6vh;
+  position: fixed;
+  bottom: 0;
+  line-height: 6vh;
+  z-index: 999;
+}
+
+.comment-button view {
+  width: 100%;
+  flex: 1;
+  text-align: center;
+  border-radius: 20rpx;
+  border: 1rpx solid #ccc;
+  background-color: #fff;
+}
+
+.mask-content {
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgb(245, 244, 244);
+}
+
+.mask-content .input {
+  padding: 20rpx 20rpx;
+  flex: 1;
+  height: 5vh;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+
+.mask-content .button {
+  color: #fff;
+  width: 140rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background-color: #3AB54D;
+  border-radius: 20rpx;
+}
+
+/* 评论抖动 */
+@keyframes newCommentAnimation {
+  0% {
+    background-color: initial;
+  }
+
+  50% {
+    background-color: rgba(175, 170, 162, 0.308);
+  }
+
+  100% {
+    background-color: initial;
+  }
+}
+
+.newComment {
+  transition: 1s;
+  animation-name: newCommentAnimation;
+  animation-timing-function: step-end;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-iteration-count: 2;
+}

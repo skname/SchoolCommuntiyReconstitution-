@@ -1,0 +1,54 @@
+.component-nav {
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.component-nav .navTab {
+  width: 100vw;
+  height: 8vh;
+  white-space: nowrap;
+  position: fixed;
+  box-shadow: 0 0 1rpx 3rpx rgba(209, 208, 206, 0.411);
+  top: 7vh;
+  background-color: #fff;
+  z-index: 999;
+}
+
+.component-nav .nav-slide {
+  top: 0;
+  width: 15vw;
+  height: 8vh;
+  position: absolute;
+  box-sizing: border-box;
+  border-bottom: 5rpx solid #62D5C9;
+  transition: all .3s;
+}
+
+/* 导航字体间隔 */
+.component-nav .nav-item {
+  overflow: hidden;
+  box-sizing: border-box;
+  line-height: 8vh;
+  text-align: center;
+  display: inline-block;
+  width: 15vw;
+  height: 100%;
+}
+
+.select {
+  color: #62D5C9;
+  font-weight: bolder;
+}
+
+.top-banner {
+  width: 100%;
+  margin-top: 17vh;
+}
+
+.content {
+  width: 100%;
+  background-color: #f5f6f6;
+}

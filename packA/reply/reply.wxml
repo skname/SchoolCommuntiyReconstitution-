@@ -1,3 +1,0 @@
-<view class="contain">
-    <Card cardList="{{card}}" bind:reRenderLike="reRenderLike" bind:reRenderComment="reRenderComment" indexFF="0"/>
-</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "component-card": "/components/card/card"
+  },
+  "onReachBottomDistance": 200,
+  "enablePullDownRefresh": true
+} 

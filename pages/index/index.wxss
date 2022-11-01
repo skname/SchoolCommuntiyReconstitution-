@@ -1,9 +1,13 @@
+.head {
+  width: 100%;
+}
 
-.head image{
+.head image {
   width: 100%;
   height: 100%;
 }
-.head .title{
+
+.head .title {
   width: 100%;
   background-color: rgba(116, 121, 126, 0.452);
   line-height: 5vh;
@@ -14,30 +18,25 @@
   text-indent: 1rem;
 }
 
-.middle{
+.middle {
+  margin-top: 20rpx;
   width: 100vw;
-  margin-top: 10rpx;
-  background-color: #fff;
-}
-.middle .inner{
-  height: auto;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
+  background-color: #fff;
 }
-.middle .inner view{
+
+.middle .middle-item {
   width: 25vw;
-  height: 15vh;
+  height: 25vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
-  font-size: 28rpx;
-  line-height: 2;
+  justify-content: space-around;
 }
 
-.block image{
+.middle .middle-item image {
   height: 10vw;
-  width: 10vw;
+  width: 100%;
 }

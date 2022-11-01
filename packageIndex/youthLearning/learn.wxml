@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="key">学号：{{studentNum}}</view>
+  <!-- 选择类型 -->
+  <picker-component class="picker-component" ranges="{{pickerGroup}}" title="请选择政治面貌" rangeKey="value" select="{{select}}" bind:handlePickChang="handlePiceChange"></picker-component>
+  <upload-image deleteable="{{!isSubmited}}" bind:reRenderImageBox="handleImageBox" class="uploadImage" imageBox="{{imageBox}}" />
+  <view class="common-button" style="{{isSubmited ? 'background: red;': ''}}" bindtap="{{!isSubmited ? 'handleSubmit' : 'handleUpdate'}}">{{!isSubmited ? '提交': '修改'}}</view>
+</view>
