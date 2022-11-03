@@ -1,7 +1,8 @@
 // 文章图片路径 格式 XXX/XXX/
 export const ARTICLE_PIC = generateAritclePictureDir(); // 发表文章文件格式
 export const YOUTH_LENRN_PIC = function (id, dep, className) {
-  return generateYounthPicDir(id, dep, className);
+  let path = generateYounthPicDir(id, dep, className)
+  return path;
 }; // 大学习发表格式
 import {
   showToast
@@ -23,12 +24,12 @@ function getYearAndMonthAndDay() {
 }
 
 function generateAritclePictureDir() {
-  let path = `article-picture/${getYearAndMonthAndDay()}/`;
+  let path = `article-picture/${getYearAndMonthAndDay()}`;
   return path;
 }
 // 生成大学习路径
 function generateYounthPicDir(id, dep, className) {
-  let path = `study-picture/${id}/${dep}/${className}/`;
+  let path = `study-picture/${id}/${dep}/${className}`;
   return path;
 }
 
@@ -67,11 +68,12 @@ async function getToken() {
   } = await getAction('/artpic/getToken');
   return data.token
 }
-
+ 
 export async function uploadByQiNiu(filePaths, FileDir) {
   const token = await getToken()
   const promise = filePaths.map(item => {
     const filePath = generateFileName(FileDir, item)
+    console.log(filePath)
     return qiniuUpload(item, token, filePath);
   })
   const result = await Promise.all(promise);

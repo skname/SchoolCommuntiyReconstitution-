@@ -70,6 +70,6 @@
 
 .noBind {
   margin: 10rpx 0;
-  background-color: rgb(83, 196, 248);
+  background-color: #30e3ca;
   position: static;
 }

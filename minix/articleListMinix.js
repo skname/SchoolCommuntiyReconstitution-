@@ -4,11 +4,10 @@ import {
   getAction,
   getOpenId,
   isContain,
-  pageScrollTo
+  pageScrollTo,
+  nextTickRender
 } from '../utils/index.js'
-
 const openId = getOpenId()
-
 const handleIsLiked = function handleIsLiked(list) {
   list.forEach(item => {
     item.isLiked = isContain(item.isLikedList, openId)
@@ -51,12 +50,12 @@ export function articleListMinix() {
     if (code === 200) {
       wxx.pages.pageNum === 1 && showToast({
         title: msg,
-        icon: 'success'
+        icon: 'success',
+        mask: true
       })
       let newList = (res.data && (res.data.records || [])) || [];
       // 处理是否点赞
       openId && handleIsLiked(newList);
-
       if (newList.length < wxx.pages.pageSize) {
         wxx.pages.isBottom = true
       }
@@ -66,16 +65,17 @@ export function articleListMinix() {
           scrollTop: 0,
           duration: 300,
           success() {
-            wxx.setData({
+            nextTickRender.call(wxx, {
               cardList: [newList]
             })
           }
         }
         pageScrollTo.call(wxx, to);
       }
-      wxx.setData({
+      nextTickRender.call(wxx, {
         [`cardList[${wxx.pages.pageNum - 1}]`]: newList
       })
+
       return
     }
     showToast({

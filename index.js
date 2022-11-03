@@ -2,7 +2,10 @@ import {
   getAction,
   showToast,
   getOpenId,
-  isDef
+  isDef,
+  removeAllStorage,
+  getStorageSync,
+  setStorage
 } from "./utils/index.js";
 import {
   Store
@@ -30,13 +33,15 @@ export async function getGolbalStatus() {
     isMpStatus,
     mangerStorage
   } = data
-  handleStorage(mangerStorage); // 清理缓存
+  mangerStorage && handleStorage(mangerStorage); // 清理缓存
   isOpenMessageEmit && Store.commit('SET_MESSAGE_EMIT', true);
   isOpenClassEmit && Store.commit('SET_CLASS_EMIT', true);
   Store.commit('SET_MP_STATUS', isMpStatus ? true : false);
 }
 
-function handleStorage(data) {
-  // 清理缓存
-
+function handleStorage(data) { // 清理缓存
+  let clearKey = getStorageSync('allStorage');
+  if (clearKey == data) return;
+  removeAllStorage()
+  setStorage('allStorage', data);
 }

@@ -1,0 +1,5 @@
+<view class="container">
+  <view class="item" style="background-color: {{item.color}};" wx:for="{{menu}}" wx:key="index" bindtap="toApp" data-appid="{{item.appId}}" data-url="{{item.url}}">
+    {{item.name}}
+  </view>
+</view>

@@ -23,7 +23,7 @@
   height: 8vh;
   position: absolute;
   box-sizing: border-box;
-  border-bottom: 5rpx solid #62D5C9;
+  border-bottom: 5rpx solid #c3bef0;
   transition: all .3s;
 }
 
@@ -38,8 +38,13 @@
   height: 100%;
 }
 
+.card-component {
+  width: 100%;
+  margin-top: 17vh;
+}
+
 .select {
-  color: #62D5C9;
+  color: #c3bef0;
   font-weight: bolder;
 }
 

@@ -4,9 +4,9 @@ Component({
       type: Array,
       value: []
     },
-    renderHtml: {
-      type: String,
-      value: ''
+    topArticle: {
+      type:Object,
+      value: null
     }
   },
   data: {

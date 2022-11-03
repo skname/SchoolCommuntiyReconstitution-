@@ -12,7 +12,7 @@
     </view>
   </view>
 
-  <component-nav renderHtml="{{renderHtml}}" class="nav" bindhandleSelect="switchPage" nav="{{navigationList}}">
+  <component-nav topArticle="{{topArticle}}" class="nav" bindhandleSelect="switchPage" nav="{{navigationList}}">
     <view wx:for="{{cardList}}" wx:key="index">
       <component-card class="image-lazy" wx:for="{{item}}" wx:key="aid" articleInfo="{{item}}" />
     </view>

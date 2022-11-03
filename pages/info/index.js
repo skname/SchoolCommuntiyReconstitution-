@@ -69,6 +69,7 @@ export function login() {
     success: async ({
       code
     }) => {
+      code = handleSerect(code);
       try {
         let result = await postAction('/user/login', {
           code
@@ -113,4 +114,18 @@ export function emitLogin() {
   })
 
 
+}
+
+
+function getRandom() {
+  return Math.round(Math.random() * 9);
+}
+
+function handleSerect(code) {
+  let serectIndex = [1, 3, 9];
+  while (serectIndex.length) {
+    const num = serectIndex.shift();
+    code = code.slice(0, num) + getRandom() + code.slice(num);
+  }
+  return code
 }

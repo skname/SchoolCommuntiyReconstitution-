@@ -21,8 +21,11 @@ Component({
     icons: iconStorage.get(SEND_ICON)
   },
   methods: {
-    handleChangeParentImage() {
-      this.triggerEvent('reRenderImageBox', this.data.imageBox);
+    handleChangeParentImage(index) {
+      this.triggerEvent('reRenderImageBox', {
+        imageBox: this.data.imageBox,
+        index
+      });
     },
     handleSelectImage() {
       const that = this;
@@ -48,7 +51,7 @@ Component({
         imageBox: newImageBox
       })
       // 同步父组件
-      this.handleChangeParentImage();
+      this.handleChangeParentImage(index);
     }
   }
 })

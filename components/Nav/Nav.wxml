@@ -5,14 +5,10 @@
     </view>
     <view class="nav-slide" style="transform: translateX({{100*select + '%'}})"></view>
   </scroll-view>
-
   <!-- 置顶位置 -->
-  <view class="top-banner" wx:if="{{renderHtml!=''}}">
-    <rich-text nodes="{{renderHtml}}">
-    </rich-text>
-  </view>
+  <card-component class="card-component" wx:if="{{topArticle !=null}}" articleInfo="{{topArticle}}" isTop="{{true}}" />
 
-  <view class="content" style="margin-top: {{renderHtml!=''? '': '17vh'}};">
+  <view class="content" style="margin-top: {{topArticle!=null?'': '17vh'}};">
     <slot></slot>
   </view>
 </view>

@@ -8,14 +8,14 @@ import {
   ALLCLASSESNAME,
   getAllClassName,
   debounce,
-  getOpenId,
-  openGuide
+  getOpenId
+
 }
 from '../../utils/index.js'
 import {
   Store
 } from '../../store/index.js'
-let colorList = ["#FFCC99", "#996699", "#99CC66", "#FF6666", "#FF9900", "#009999", "#FFCCCC", '#336699', "#99CC99"]
+let colorList = ["#f9a1bc", "#769fcd", "##ffd3b6", "#b9d7ea", "#f2c6b4", "#e6a4b4", "#c3bef0", '#ffe2e2', "#769fcd"]
 
 // 格式化
 function handleClass(data) {

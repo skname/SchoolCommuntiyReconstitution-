@@ -23,7 +23,7 @@
   text-align: center;
   line-height: 7vh;
   color: #fff;
-  background-color: crimson;
+  background-color: #e23e57;
   margin-top: auto;
   margin-bottom: 10vh;
 }
@@ -71,7 +71,7 @@
 .pop-window {
   width: 100%;
   height: 20vh;
-  background-color: rgb(53, 189, 223);
+  background-color: #cadefc;
   position: absolute;
   bottom: 0;
 }

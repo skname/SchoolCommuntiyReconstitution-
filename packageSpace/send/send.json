@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "select-image": "/components/uploadImage/uploadImage"
+    "select-image": "/components/uploadImage/uploadImage",
+    "picker-component": "/components/picker/pickerComponent"
   }
 }

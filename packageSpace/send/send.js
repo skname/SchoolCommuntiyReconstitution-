@@ -1,5 +1,4 @@
 import {
-  chooseImage,
   SEND_ICON,
   iconStorage
 } from '../../utils/index.js'
@@ -11,7 +10,7 @@ import {
 } from '../../pages/space/index.js'
 
 navigationList.splice(1, 1); // 删除热门
-
+navigationList.pop()
 Page({
   data: {
     content: '',
@@ -20,9 +19,14 @@ Page({
     selectType: navigationList,
     icons: iconStorage.get(SEND_ICON),
   },
-  handleImageBox({detail}) {
+  handleImageBox({
+    detail
+  }) {
+    const {
+      imageBox
+    } = detail
     this.setData({
-      imageBox: detail
+      imageBox
     })
   },
   submit: submitThrottle,

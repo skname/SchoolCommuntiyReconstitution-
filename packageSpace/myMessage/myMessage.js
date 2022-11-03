@@ -10,7 +10,7 @@ import {
 Page({
   data: {
     isChecked: ''
-  },
+  }, 
   handleRouterAndParam(event) {
     const {
       url,

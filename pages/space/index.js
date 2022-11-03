@@ -23,7 +23,7 @@ const handleSearch = function () {
 }
 export const handleSearchThrottle = throttle(handleSearch, 2000);
 
-export function initProxy() { 
+export function initProxy() {
   this.url = '/article/list';
   this.isInit = false; // 控制是否刷新并滚动到顶端
   articleListMinix.call(this)
@@ -75,6 +75,11 @@ export const navigationList = [{
     id: 8,
     name: '招新',
     color: '#1afa29'
+  },
+  {
+    id: 9,
+    name: '置顶',
+    color: '#cca8e9'
   }
 ]
 

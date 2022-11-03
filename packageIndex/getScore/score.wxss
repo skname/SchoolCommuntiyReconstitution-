@@ -17,10 +17,10 @@
   width: 30rpx;
   height: 30rpx;
 }
-
+ 
 .head {
   width: 100%;
-  background-color: #62D5C9;
+  background-color: #c3bef0;
   position: fixed;
   z-index: 100;
 }

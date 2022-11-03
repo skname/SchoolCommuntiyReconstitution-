@@ -8,46 +8,47 @@ export const ARTICLE_TYPE_ICONS = 'articleTypeIcons'; // 文章类型图标
 export const ARTICLE_BOTTOM_ICONS = 'aritcleBottomIcons'; // 文章底部
 export const ICONS = {
   [INDEX_ICON]: [
-    'https://s1.ax1x.com/2022/10/03/xQUZEF.png', // 成绩
-    'https://s1.ax1x.com/2022/10/15/x0oCWj.png', // 课表
-    'https://s1.ax1x.com/2022/10/21/xcp7jA.png', // 青年大学习
-    'https://s1.ax1x.com/2022/10/15/x0oFln.png', // 计算器
-    'https://s1.ax1x.com/2022/10/15/x0oVmV.png', // 签到
-    'https://s1.ax1x.com/2022/10/15/x0ollR.png', // 打印机
-    'https://s1.ax1x.com/2022/10/07/x36Tqe.png', // 四六级
-    'https://s1.ax1x.com/2022/10/26/xWc3DA.png'
+    'https://img.skself.work/icon/index/xQUZEF.png', // 成绩
+    'https://img.skself.work/icon/index/x0oCWj.png', // 课表
+    'https://img.skself.work/icon/index/xcp7jA.png', // 青年大学习
+    'https://img.skself.work/icon/index/x0oFln.png', // 计算器
+    'https://img.skself.work/icon/index/x0oVmV.png', // 签到
+    'https://img.skself.work/icon/index/x0ollR.png', // 打印机
+    'https://img.skself.work/icon/index/x36Tqe.png', // 四六级
+    'https://img.skself.work/icon/index/xWc3DA.png'
   ],
   [SPACE_ICON]: [
-    'https://s1.ax1x.com/2022/10/05/xlr3ge.png',
-    'https://s1.ax1x.com/2022/10/04/xQ4qij.png',
-    'https://s1.ax1x.com/2022/10/18/xrQEz6.png'
+    'https://img.skself.work/icon/space/message1.png',
+    'https://img.skself.work/icon/space/addArticle.png',
+    'https://img.skself.work/icon/space/search.png'
   ],
-  [INFO_ICON]: ['https://s1.ax1x.com/2022/10/23/xgj34g.png'],
+  [INFO_ICON]: ['https://img.skself.work/icon/space/drection.png'], // 箭头
   [MY_ARTICLE_ICON]: [
-    'https://s1.ax1x.com/2022/10/09/xJV0Nq.png',
-    'https://s1.ax1x.com/2022/10/09/xJVB40.png',
-    'https://s1.ax1x.com/2022/10/09/xJAoIx.jpg'
+    'https://img.skself.work/icon/space/man.png', // 男
+    'https://img.skself.work/icon/space/woman.png', // 女
+    'https://img.skself.work/icon/space/back.jpg' // 背景
   ],
   [SEND_ICON]: [
-    'https://s1.ax1x.com/2022/10/02/xM8RW6.png'
+    'https://img.skself.work/icon/space/upload1.png' // 上传图片
   ],
-  [MY_MESSAGE_ICON]: ['https://s1.ax1x.com/2022/10/12/xaZG3n.png'],
+  [MY_MESSAGE_ICON]: ['https://img.skself.work/icon/space/lindang.png'], // 铃铛
   [ARTICLE_TYPE_ICONS]: [
-    'https://s1.ax1x.com/2022/10/05/xl6mHs.png',
-    'https://s1.ax1x.com/2022/10/05/xlyIB9.png',
-    'https://s1.ax1x.com/2022/10/05/xlssJK.png',
-    'https://s1.ax1x.com/2022/10/05/xlyct0.png',
-    'https://s1.ax1x.com/2022/10/05/xlsLLj.png',
-    'https://s1.ax1x.com/2022/10/05/xlsHSS.png',
-    'https://s1.ax1x.com/2022/10/05/xlyap8.png',
-    'https://s1.ax1x.com/2022/10/05/xlyDmj.png',
-    'https://s1.ax1x.com/2022/10/05/xlybh6.png'
+    'https://img.skself.work/icon/space/guangchang.png', // 广场
+    'https://img.skself.work/icon/space/fire.png', // 热门
+    'https://img.skself.work/icon/space/gongjian.png', // 弓箭
+    'https://img.skself.work/icon/space/addFirend.png', // 扩列
+    'https://img.skself.work/icon/space/bao.png', // 二手
+    'https://img.skself.work/icon/space/wangyuanjin.png', // 望远镜
+    'https://img.skself.work/icon/space/diss.png', // 吐槽
+    'https://img.skself.work/icon/space/game.png', // 游戏
+    'https://img.skself.work/icon/space/naxin.png', // 纳新
+    'https://img.skself.work/icon/space/top.png' // 置顶
   ],
-  [ARTICLE_BOTTOM_ICONS]: [ 
-    'https://s1.ax1x.com/2022/10/05/xlruAx.png',
-    'https://s1.ax1x.com/2022/10/05/xlreBR.png',
-    'https://s1.ax1x.com/2022/10/05/xlrEjJ.png',
-    'https://s1.ax1x.com/2022/10/09/xYen5n.png',
-    'https://s1.ax1x.com/2022/10/24/x2bsAg.png'
+  [ARTICLE_BOTTOM_ICONS]: [
+    'https://img.skself.work/icon/space/liuyan.png', // 评论
+    'https://img.skself.work/icon/space/dianzan.png', // 点赞
+    'https://img.skself.work/icon/space/dianzaned.png', // 已经点赞
+    'https://img.skself.work/icon/space/delete.png', // 删除
+    'https://img.skself.work/icon/space/menu.png' // 
   ]
 }

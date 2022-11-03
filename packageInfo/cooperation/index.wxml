@@ -1,13 +1,4 @@
-<view class="contain">
-    <view class="title">太大圈子广告位置投放</view>
-    <view class="card">
-        <text>1. 动态栏区域置顶推广位</text>
-        <image src="{{icons[0]}}" class="image1" bindtap="previewImg" data-index="0" mode="widthFix"></image>
-        <text>2. 首页置顶轮播图位置</text>
-        <image src="{{icons[1]}}" class="image1" bindtap="previewImg" data-index="1" mode="widthFix" ></image>
-        <text>3. 首页功能栏，可对接商家自己小程序</text>
-        <image src="{{icons[2]}}" class="image1" bindtap="previewImg" data-index="2" mode="widthFix"></image>
-        <text>如有投放需求欢迎添加好友垂询</text>
-        <image bindtap="previewImg" mode="widthFix" class="image1" show-menu-by-longpress="true" data-index="3" src="{{icons[3]}}"></image> 
-    </view>
+<view class="container">
+  <view style="margin-bottom:10vh;color: 35rpx;font-weight: bolder;">具体请联系太大丫丫</view>
+  <image style="width: 90%;" src="{{icons[0]}}" bindtap="preview" data-imgs="{{icons}}" data-current="{{index}}" mode="aspectFill"></image>
 </view>

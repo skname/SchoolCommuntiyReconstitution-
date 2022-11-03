@@ -8,12 +8,12 @@
     </view>
   </view>
   <!-- 头像 -->
-  <view class="header">
+  <view class="header" wx:if="{{!isTop}}">
     <view class="headPic" catchtap="handleRouter" data-openid="{{articleInfo.openId}}" data-url="/packageInfo/myArticle/myArticle">
       <image class="image" src="{{articleInfo.headPic}}" mode="aspectFill"></image>
     </view>
     <view class="headInfo">
-      <text user-select="true">{{articleInfo.nickName}}</text>
+      <text user-select="true" style="{{openId == articleInfo.openId ? 'color: #fce38a;font-weight: bolder;': ''}} ">{{articleInfo.nickName}}</text>
       <text class="create-time">{{articleInfo.createTime}}</text>
     </view>
   </view>

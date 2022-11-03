@@ -22,7 +22,8 @@ Component({
     icons: iconStorage.get(ARTICLE_BOTTOM_ICONS),
     typeIcons: iconStorage.get(ARTICLE_TYPE_ICONS),
     nav: navigationList,
-    isShow: false
+    isShow: false,
+    openId: 'o_fdS46LIcYUrbtr7Jlo-saxtc4g'
   },
   properties: {
     articleInfo: Object,
@@ -35,6 +36,10 @@ Component({
       value: true
     },
     isMine: { // 是否从我的帖子进入
+      type: Boolean,
+      value: false
+    },
+    isTop: {
       type: Boolean,
       value: false
     }

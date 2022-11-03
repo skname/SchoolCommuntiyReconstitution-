@@ -6,8 +6,8 @@ export * from './router.js';
 export * from './login.js';
 export * from './req.js';
 export * from './nextTickRender.js'
-export * from './type.js'
-export * from './iconStorage.js'
+export * from './type.js';
+export * from './iconStorage.js';
 export * from './icons.js';
-export * from './checkSymbol.js'
-export * from './qiniu/qiniu.js'
+export * from './checkSymbol.js';
+export * from './qiniu/qiniu.js';

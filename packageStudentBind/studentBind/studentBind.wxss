@@ -11,7 +11,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #62D5C9;
+  background-color: #c3bef0;
 }
 
 .logo {
@@ -19,11 +19,11 @@
   z-index: 99;
   height: 40vh;
   justify-content: center;
-} 
+}
 
 .logo image {
-  width: 30vh;
-  height: 30vh;
+  width: 28vh;
+  height: 28vh;
 }
 
 .bottom {
@@ -39,7 +39,7 @@
 .bottom-header {
   width: 100vw;
   height: 8vh;
-  background-image: linear-gradient(#62D5C9, #fff);
+  background-image: linear-gradient(#c3bef0, #fff);
 }
 
 .login-form {
@@ -59,7 +59,7 @@
 }
 
 .input-group.active {
-  border: 2px solid #7acfa6;
+  border: 2px solid #c3bef0;
 }
 
 .input-label {

@@ -34,18 +34,14 @@ Page({
         bindable: false
       },
       {
-        id: 4,
-        name: '签到打卡',
-        url: '/packageIndex/signIn/sigin',
+        id: 5,
+        name: '远程打印',
+        url: '/packageIndex/print/print',
+        loginable: false,
+        bindable: false
       }
     ],
     otherMenus: [{
-        appId: 'wx7e6ca8d9aa60e615',
-        id: 5,
-        name: '远程打印',
-        url: 'pages/appoint/main'
-      },
-      {
         id: 6,
         name: '四六级查询',
         url: 'packageResultQuery/pages/cet_his/CET_Result_His_Portal',

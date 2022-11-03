@@ -6,16 +6,16 @@
 }
 
 .common-button {
-  background-color: rgb(65, 236, 142);
+  background-color: #6ef3d6;
 }
 
 .picker-component,
 .key {
   width: 100%;
-  background-color: #fff;
 }
 
 .key {
+  background-color: #fff;
   margin-bottom: 20rpx;
   padding: 20rpx;
   box-sizing: border-box;

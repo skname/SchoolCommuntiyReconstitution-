@@ -1,12 +1,12 @@
 import {
-  getStudentInfo
+  getStudentInfo,
+  isDef
 } from '../../utils/type.js'
 import {
   getStudyInfo,
   handleSubmitDebouce,
   getStudyUploadInfo
 } from './index.js'
-
 Page({
   data: {
     imageBox: [],
@@ -32,8 +32,11 @@ Page({
   handleImageBox({
     detail
   }) {
+    const {
+      imageBox
+    } = detail;
     this.setData({
-      imageBox: detail
+      imageBox
     })
   },
   handleSubmit() {

@@ -11,8 +11,8 @@
         "webView/web",
         "getScore/score",
         "getClass/table",
-        "signIn/sigin",
-        "youthLearning/learn"
+        "youthLearning/learn",
+        "print/print"
       ]
     },
     {
@@ -70,7 +70,7 @@
   },
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#62D5C9",
+    "navigationBarBackgroundColor": "#c3bef0",
     "navigationBarTitleText": "太大的圈儿",
     "navigationBarTextStyle": "white",
     "onReachBottomDistance": 0,
@@ -101,13 +101,8 @@
       }
     ],
     "backgroundColor": "#F6F6FB",
-    "color": "#515151",
-    "selectedColor": "#62D5C9"
+    "color": "#bfbfbf",
+    "selectedColor": "#c3bef0"
   },
-  "lazyCodeLoading": "requiredComponents",
-  "permission": {
-    "scope.userLocation": {
-      "desc": "你的位置信息将用于小程序位置接口的效果展示"
-    }
-  }
+  "lazyCodeLoading": "requiredComponents"
 }

@@ -62,7 +62,7 @@
   flex: 1;
   width: 90%;
   height: 100%;
-  color: #fff;
+  color: #f5f7fa;
   box-sizing: border-box;
   overflow: hidden;
   box-sizing: border-box;
@@ -78,7 +78,7 @@
 .footer {
   height: 8vh;
   width: 100%;
-  background-color: cornflowerblue;
+  background-color: #c3bef0;
   border-top-left-radius: 50rpx;
   border-top-right-radius: 50rpx;
   color: #fff;

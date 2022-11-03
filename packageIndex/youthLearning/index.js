@@ -9,12 +9,13 @@ import {
   showLoading,
   hideLoading,
   postAction,
-  setStorage
+  setStorage,
+  back
 } from "../../utils/index.js";
 
 export const handleSubmitDebouce = throttle(async function () {
   const stuFaceIndex = this.data.select;
-  const imageBox = this.data.imageBox;
+  let imageBox = this.data.imageBox;
   if (!imageBox.length) {
     return showToast({
       title: '图片不能为空！',
@@ -29,34 +30,52 @@ export const handleSubmitDebouce = throttle(async function () {
       name,
       id
     } = this.studentInfo;
-    let picPath = await uploadByQiNiu(imageBox, YOUTH_LENRN_PIC(this.periodId, department, classNo));
-    // 发起请求
-    postAction('/GreatLearning/upload', {
+    let oldPath = '';
+    if (this.isUpdate) {
+      // 处理上传图片
+      let [old, newBox] = handleUpdateImage(this.oldPath, imageBox);
+      imageBox = newBox;
+      oldPath = old;
+    }
+    let picPath = ''
+    if (imageBox.length > 0) {
+      picPath = (await uploadByQiNiu(imageBox, YOUTH_LENRN_PIC(this.periodId, department, classNo)));
+    }
+
+    let uploadPath = ''
+    if (oldPath && picPath) {
+      uploadPath = oldPath + ',' + picPath
+    } else if (oldPath) {
+      uploadPath = oldPath;
+    } else {
+      uploadPath = picPath
+    }
+    // 发起请求 
+    postAction(this.url, {
       stuName: name,
       stuNumber: id,
       stuFace: stuFaceIndex,
       className: classNo,
       systemName: department,
-      infoPic: picPath
+      infoPic: uploadPath
     }, {
       title: '上传中',
       mask: true
-    }); // 发送请求
+    }).then(res => {
+      // 改变上传状态
+      this.setData({
+        isSubmited: true
+      })
 
-    // 改变上传状态
-    this.setData({
-      isSubmited: true
+      // 保存政治面貌缓存
+      setStorage(STUDYINFO, {
+        index: stuFaceIndex
+      });
+      back()
     })
 
-    // 保存政治面貌缓存
-    setStorage(STUDYINFO, {
-      index: stuFaceIndex
-    });
-  } catch {
 
-  }
-
-
+  } catch {}
 }, 1500);
 
 
@@ -88,11 +107,19 @@ export async function getStudyUploadInfo() {
       periodId
     } = res.data;
     this.periodId = periodId;
-    this.setData({ 
+    if (greatLearningPic) { // 更新
+      this.isUpdate = true;
+      this.oldPath = greatLearningPic;
+      this.url = '/GreatLearning/update';
+    } else {
+      this.url = '/GreatLearning/upload';
+    }
+
+    this.setData({
       imageBox: greatLearningPic || [],
       isSubmited: greatLearningPic === null ? false : true
     })
-    hideLoading()
+    hideLoading();
   } catch {
     hideLoading()
     showToast({
@@ -100,5 +127,21 @@ export async function getStudyUploadInfo() {
       icon: 'error'
     })
   }
+}
 
+
+function handleUpdateImage(oldImageBox, newImageBox) {
+  let oldPath = '',
+    newPath = [];
+  const len = newImageBox.length;
+  for (let i = 0; i < len; i++) {
+    const path = newImageBox[i];
+    if (oldImageBox.includes(path)) {
+      oldPath += `,${path}`;
+    } else {
+      newPath.push(path)
+    }
+  }
+  oldPath = oldPath.slice(1)
+  return [oldPath, newPath]
 }

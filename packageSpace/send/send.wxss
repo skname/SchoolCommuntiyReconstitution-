@@ -1,6 +1,5 @@
 .container {
   min-height: 100vh;
-  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -9,58 +8,22 @@
 }
 
 .text textarea {
-  background-color: aquamarine;
   box-sizing: border-box;
   width: 100%;
   height: 15vh;
   padding: 20rpx;
   background-color: #fff;
 }
-.select-image{
+
+.select-image {
   width: 100%;
-}
-
-.select-type {
-  width: 100vw;
-  padding: 3vw;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-  justify-content: space-between;
-  background-color: #fff;
-}
-
-.select-type .title,
-.visibility {
-  white-space: nowrap;
-}
-
-.visibility {
-  background-color: rgba(231, 126, 231, 0.253);
-  font-weight: bolder;
-  padding: 15rpx 50rpx;
-  border-radius: 50rpx;
-}
-
-.select-type picker {
-  width: 100%;
-  height: 100%;
-}
-
-.select-type,
-.select-type .currSelect {
-  height: 8vh;
-}
-
-.select-type .currSelect {
-  width: 100%;
-  position: absolute;
-  opacity: 0;
 }
 
 .common-button {
   margin-top: 5vh;
   bottom: 8vh;
+}
+
+.picker-component {
+  width: 100%;
 }

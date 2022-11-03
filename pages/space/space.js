@@ -2,7 +2,9 @@ import {
   nextTickRender,
   routerValidatorTo,
   iconStorage,
-  SPACE_ICON
+  SPACE_ICON,
+  isContain,
+  getOpenId
 } from '../../utils/index.js'
 import {
   Store
@@ -13,16 +15,18 @@ import {
   getTopList,
   handleSearchThrottle
 } from './index.js';
+const newNav = [...navigationList]
+newNav.pop()
 Page({
   data: {
     isHasMessage: false,
-    navigationList,
+    navigationList: newNav,
     cardList: [],
     search: {
       cid: 0,
       searchContent: ''
     },
-    renderHtml: '',
+    topArticle: null,
     icons: iconStorage.get(SPACE_ICON)
   },
   handleRouter(event) {
@@ -51,16 +55,20 @@ Page({
   },
   onLoad: function () {
     // 获取 topList 
-    // getTopList('all', ({
-    //   isHasMessage,
-    //   topList
-    // }) => {
-    //   nextTickRender.call(this, {
-    //     isHasMessage: isHasMessage,
-    //     renderHtml: topList
-    //   })
-    //   Store.commit('SET_MESSAGE', isHasMessage);
-    // })
+    getTopList('all', ({
+      isHasMessage,
+      topArticle
+    }) => {
+      if (topArticle) {
+        topArticle.cid = 9
+        topArticle.isLiked = isContain(topArticle.isLikedList, getOpenId())
+      }
+      nextTickRender.call(this, {
+        isHasMessage: isHasMessage,
+        topArticle: topArticle || null
+      })
+      Store.commit('SET_MESSAGE', isHasMessage);
+    })
     initProxy.call(this)
   },
   onReady: function () {},
