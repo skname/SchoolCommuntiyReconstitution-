@@ -31,17 +31,11 @@ Page({
   },
   submit: submitThrottle,
   handlePickChang(event) {
-    let {
-      value
-    } = event.detail;
+    let value = event.detail;
     this.setData({
       selectIndex: value
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

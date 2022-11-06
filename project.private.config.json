@@ -1,9 +1,10 @@
 {
   "setting": {
     "compileHotReLoad": false,
-    "urlCheck": false,
+    "urlCheck": true,
     "useIsolateContext": false,
-    "lazyloadPlaceholderEnable": false
+    "lazyloadPlaceholderEnable": false,
+    "autoAudits": false
   },
   "condition": {
     "miniprogram": {
