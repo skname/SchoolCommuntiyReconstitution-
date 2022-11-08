@@ -12,7 +12,8 @@
         "getScore/score",
         "getClass/table",
         "youthLearning/learn",
-        "print/print"
+        "print/print",
+        "youthLearning/learnStatus"
       ]
     },
     {

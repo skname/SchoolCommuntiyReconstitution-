@@ -19,7 +19,7 @@
   </view>
   <!-- 文字内容 -->
   <view class="content">
-    <text user-select="true" class="text">{{articleInfo.content}}</text>
+    <text class="text-ellipsis" user-select="{{!isShowTitleAndFooter}}" class="text">{{articleInfo.content}}</text>
   </view>
   <!-- 图片区域 -->
   <view class="image-box" id="{{articleInfo.aid}}" wx:if="{{articleInfo.picInfos.length > 0}}">

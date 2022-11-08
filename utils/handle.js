@@ -113,7 +113,6 @@ export function preview(event) {
     current,
     imgs
   } = event.currentTarget.dataset;
-
   const sources = imgs.map(url => {
     return {
       url

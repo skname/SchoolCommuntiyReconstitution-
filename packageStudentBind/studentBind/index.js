@@ -1,13 +1,9 @@
-let testUrl1 = 'http://192.168.1.10:8081'; // 杨鹏
-let testUrl2 = 'http://192.168.1.2:8085'; //王彭
-let testUrl3 = 'http://192.168.43.85:8082' // 王彭热点
 let workUrl = 'https://skself.work'; // 工作
 let baseUrl = workUrl
 let cookieStore = '';
 const STUDENTINFO = 'studentInfo';
 const USERINFO = 'userInfo';
 
-// 节流
 function throttle(fn, delay) {
   let time = null;
   return function (...args) {
@@ -51,7 +47,7 @@ function getAction(url, data = null) {
       method: 'GET',
       dataType: 'json',
       success: data => {
-        parseCookie(data.cookies[0])
+        data.cookies[0] && parseCookie(data.cookies[0])
         res(data.data);
       },
       fail: err => {
@@ -92,6 +88,7 @@ function postAction(url, data = {}, loadMessage = {
           })
           res(result.data);
         } else {
+          getCaptcha.call(this)
           wx.showToast({
             title: msg,
             icon: 'error'
@@ -127,7 +124,6 @@ export function getCaptcha() {
         icon: 'error'
       })
     }
-
   }, err => {
     wx.showToast({
       title: '服务器繁忙',
@@ -157,7 +153,7 @@ export function handleBindStudent() {
         icon: 'error'
       })
     }
-    postAction('/urp/bind', {
+    postAction.call(this, '/urp/bind', {
       userName: studentNum,
       password: studentPassword,
       captcha,

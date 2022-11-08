@@ -6,7 +6,7 @@ export const SEND_ICON = 'sendIcons' // 发送页面图标
 export const MY_MESSAGE_ICON = 'myMessageIcon' // 消息通知页面图标
 export const ARTICLE_TYPE_ICONS = 'articleTypeIcons'; // 文章类型图标
 export const ARTICLE_BOTTOM_ICONS = 'aritcleBottomIcons'; // 文章底部
-export const ICONS = {
+export const ICONS = { 
   [INDEX_ICON]: [
     'https://img.skself.work/icon/index/xQUZEF.png', // 成绩
     'https://img.skself.work/icon/index/x0oCWj.png', // 课表

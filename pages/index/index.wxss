@@ -19,6 +19,7 @@
 }
 
 .middle {
+  color: #2d4059;
   margin-top: 20rpx;
   width: 100vw;
   display: flex;

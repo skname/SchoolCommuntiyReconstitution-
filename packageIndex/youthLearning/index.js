@@ -10,7 +10,8 @@ import {
   hideLoading,
   postAction,
   setStorage,
-  back
+  back,
+  getStudentInfo
 } from "../../utils/index.js";
 
 export const handleSubmitDebouce = throttle(async function () {
@@ -144,4 +145,27 @@ function handleUpdateImage(oldImageBox, newImageBox) {
   }
   oldPath = oldPath.slice(1)
   return [oldPath, newPath]
+}
+
+
+export function init() {
+  const {
+    classNo
+  } = getStudentInfo();
+  getAction('/GreatLearning/getClassStuInfos', {
+    className: classNo
+  }).then(res => {
+    // 统计提交人数 sumbitedNum
+    let sumbitedNum = 0,
+      len = res.data.length,
+      list = res.data;
+    for (let i = 0; i < len; i++) {
+      list[i].status && sumbitedNum++;
+    } 
+    this.setData({
+      list,
+      sumbitedNum,
+      totalNum: len
+    })
+  })
 }

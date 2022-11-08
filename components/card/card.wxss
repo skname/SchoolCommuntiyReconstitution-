@@ -51,6 +51,11 @@
 
 .card .content {
   line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card .image-box {
@@ -60,7 +65,6 @@
 .card .image-box .one-picture {
   text-align: center;
 }
-
 
 .card .image-box .two-picture {
   display: flex;

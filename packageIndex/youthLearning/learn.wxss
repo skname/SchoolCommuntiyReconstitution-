@@ -20,3 +20,15 @@
   padding: 20rpx;
   box-sizing: border-box;
 }
+
+.button {
+  position: absolute;
+  width: 50vw;
+  height: 4vh;
+  background-color: #a1d9ff;
+  border-radius: 50rpx;
+  color: #f6f6f6;
+  line-height: 4vh;
+  text-align: center;
+  bottom: 18vh;
+}

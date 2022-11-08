@@ -42,7 +42,6 @@ Page({
       })
       handleClassEmit.call(this) // 处理订阅课表状态
     })
-
   },
   handleColumn(eventhandle) {
     const {
@@ -82,14 +81,18 @@ Page({
     })
   },
   handleClick(event) {
-    this.setData({
-      isMask: true
-    })
     const {
-      teacher
-    } = event.currentTarget.dataset
+      teacher,
+      classroom,
+      time,
+      classes
+    } = event.currentTarget.dataset;
     this.setData({
-      teacher
+      isMask: true,
+      teacher,
+      classroom,
+      time,
+      classes
     })
   },
   handleCloseMask() {

@@ -3,5 +3,7 @@
   <!-- 选择类型 -->
   <picker-component class="picker-component" ranges="{{pickerGroup}}" title="请选择政治面貌" rangeKey="value" select="{{select}}" bind:handlePickChang="handlePiceChange"></picker-component>
   <upload-image deleteable="{{!isSubmited}}" bind:reRenderImageBox="handleImageBox" class="uploadImage" imageBox="{{imageBox}}" />
+
+  <view class="button" bindtap="handleSubmitStatus" data-url="./learnStatus">查看本班提交情况 ></view>
   <view class="common-button" style="{{isSubmited ? 'background: #e23e57;': ''}}" bindtap="{{!isSubmited ? 'handleSubmit' : 'handleUpdate'}}">{{!isSubmited ? '提交': '修改'}}</view>
 </view>

@@ -14,7 +14,7 @@
       <view class="content-right-content">
         <!-- 课表 -->
         <view class="column" wx:for="{{table}}" wx:key="index">
-          <view class="row" style="background-color: {{item.color}}" wx:for="{{item}}" wx:key="index" catchtap="{{item != 0 ? 'handleClick': ''}}" data-teacher="{{item.teacher}}">
+          <view class="row" style="background-color: {{item.color}}" wx:for="{{item}}" wx:key="index" catchtap="{{item != 0 ? 'handleClick': ''}}" data-teacher="{{item.teacher}}" data-classroom="{{item.classroom}}" data-time="{{item.time}}" data-classes="{{item.class}}">
             <text wx:if="{{item != 0}}">{{"@"+item.time+ ' '+item.classroom}}</text>
             <text wx:if="{{item != 0}}">{{item.class}}</text>
           </view>
@@ -33,9 +33,11 @@
   </view>
 
   <view class="golbal-mask" catchtap="handleCloseMask" wx:if="{{isMask}}">
-    <view class="pop-window" catchtap="handleStatic">
-      <view>老师：{{teacher}}</view>
-      <view></view>
+    <view class="pop-window class-detail" catchtap="handleStatic">
+      <view class="item">时间：{{time}}</view>
+      <view class="item">老师：{{teacher}}</view>
+      <view class="item">教室：{{classroom}}</view>
+      <view class="item">课程：{{classes}}</view>
     </view>
   </view>
 </view>

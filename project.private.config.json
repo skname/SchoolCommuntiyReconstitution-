@@ -4,7 +4,8 @@
     "urlCheck": true,
     "useIsolateContext": false,
     "lazyloadPlaceholderEnable": false,
-    "autoAudits": false
+    "autoAudits": false,
+    "preloadBackgroundData": false
   },
   "condition": {
     "miniprogram": {
@@ -188,10 +189,18 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageIndex/youthLearning/learnStatus",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
   },
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "libVersion": "2.25.4"
+  "libVersion": "2.25.4",
+  "projectname": "%E5%BE%AE%E4%BF%A1%E9%A1%B9%E7%9B%AE"
 }
