@@ -1,7 +1,6 @@
 {
   "usingComponents": {
     "upload-image": "/components/uploadImage/uploadImage",
-    "radio-component": "/components/radio/radio",
     "picker-component": "/components/picker/pickerComponent"
   }
 }

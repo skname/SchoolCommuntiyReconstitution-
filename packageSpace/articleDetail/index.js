@@ -33,16 +33,19 @@ export function isLoginAndBind(loginable = true, bindable = true) {
   return isLoginAndBind
 }
 export async function submitRequest(data) {
-  await postAction('/article/comments/add', data, {
-    title: '评论中...',
-    mask: true
-  })
-  // 隐藏输入框 刷新评论
-  wx.nextTick(() => {
-    this.setData({
-      isShow: false,
-      commentContent: ''
+  try {
+    await postAction('/article/comments/add', data, {
+      title: '评论中...',
+      mask: true
     })
-  })
-  initComment.call(this, this.data.articleInfo.aid)
+    // 隐藏输入框 刷新评论
+    wx.nextTick(() => {
+      this.setData({
+        isShow: false,
+        commentContent: ''
+      })
+    })
+    initComment.call(this, this.data.articleInfo.aid)
+  } catch {}
+
 }

@@ -8,12 +8,10 @@ import {
   throttle,
   chooseImage,
   upload,
-  getUserInfo,
-  checkSymbol,
-  clopImage
+  getUserInfo
 } from '../../utils/index.js';
 
-const handleUpdate = function () {
+const handleUpdate = async function () {
   let {
     openId,
     userSex,
@@ -26,7 +24,7 @@ const handleUpdate = function () {
       title: '昵称不能为空',
       icon: 'error'
     })
-  } 
+  }
   postAction('/user/info/update', {
     openId,
     userSex,
@@ -77,7 +75,7 @@ export function handleUpdateHeadPic() {
         showToast({
           title: msg || '',
           icon: 'error'
-        }) 
+        })
       }
     } catch {
       hideLoading();

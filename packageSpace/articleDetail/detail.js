@@ -14,9 +14,6 @@ import {
   submitRequest
 } from './index.js'
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
     isShow: false,
     isFocus: false,
@@ -60,7 +57,7 @@ Page({
       isFocus: true
     })
   },
-  submit() {
+  async submit() {
     const comment = this.data.commentContent
     if (!isDef(comment)) {
       return showToast({

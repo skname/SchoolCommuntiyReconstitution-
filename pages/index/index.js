@@ -5,7 +5,7 @@ import {
   iconStorage,
   INDEX_ICON,
   getAction,
-  toWeb
+  toWeb,
 } from '../../utils/index.js';
 Page({
   data: {
@@ -32,16 +32,17 @@ Page({
         url: '/packageCalculator/Calculator/calculator',
         loginable: false,
         bindable: false
-      },
-      {
-        id: 5,
-        name: '远程打印',
-        url: '/packageIndex/print/print',
-        loginable: false,
-        bindable: false
       }
     ],
-    otherMenus: [{
+    otherMenus: [
+      // {
+      //   id: 5,
+      //   name: '远程打印',
+      //   url: '/packageIndex/print/print',
+      //   loginable: false,
+      //   appId: ''
+      // },
+      {
         id: 6,
         name: '四六级查询',
         url: 'packageResultQuery/pages/cet_his/CET_Result_His_Portal',

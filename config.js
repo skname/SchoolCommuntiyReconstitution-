@@ -7,4 +7,4 @@ let workUrl = 'https://skself.work'; // 工作
 export default {
   // 记得切换动态中的主机地址
   baseUrl: workUrl
-}
+} 

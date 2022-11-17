@@ -11,8 +11,7 @@ import {
   getStudentInfo,
   clearData
 } from '../../utils/index.js';
-
-// 刷新
+// 刷新 
 export async function reflash() {
   const value = getUserInfo()
   const student = getStudentInfo()
@@ -58,8 +57,7 @@ export function loginRender(data, first) {
 
 export function bindRender(data) {
   nextTickRender.call(this, {
-    isBind: true,
-    studentInfo: data
+    isBind: true
   })
 }
 

@@ -51,7 +51,7 @@ export function articleListMinix() {
       wxx.pages.pageNum === 1 && showToast({
         title: msg,
         icon: 'success',
-        mask: true
+        mask: false
       })
       let newList = (res.data && (res.data.records || [])) || [];
       // 处理是否点赞

@@ -1,6 +1,6 @@
 .component-nav {
   width: 100vw;
-  height: 8vh;
+  height: 7vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@
 
 .component-nav .navTab {
   width: 100vw;
-  height: 8vh;
+  height: 7vh;
   white-space: nowrap;
   position: fixed;
   box-shadow: 0 0 1rpx 3rpx rgba(209, 208, 206, 0.411);
@@ -20,18 +20,18 @@
 .component-nav .nav-slide {
   top: 0;
   width: 15vw;
-  height: 8vh;
+  height: 7vh;
   position: absolute;
   box-sizing: border-box;
   border-bottom: 5rpx solid #c3bef0;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 /* 导航字体间隔 */
 .component-nav .nav-item {
   overflow: hidden;
   box-sizing: border-box;
-  line-height: 8vh;
+  line-height: 7vh;
   text-align: center;
   display: inline-block;
   width: 15vw;
@@ -40,7 +40,7 @@
 
 .card-component {
   width: 100%;
-  margin-top: 17vh;
+  margin-top: 14vh;
 }
 
 .select {

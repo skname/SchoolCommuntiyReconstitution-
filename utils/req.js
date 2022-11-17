@@ -1,6 +1,12 @@
 import Config from "../config";
-import { showToast, showLoading, hideLoading } from "./message.js";
-let { baseUrl } = Config;
+import {
+  showToast,
+  showLoading,
+  hideLoading
+} from "./message.js";
+let {
+  baseUrl
+} = Config;
 // GET 请求
 let cookieBase = "";
 export function getAction(url, data = null) {
@@ -19,7 +25,7 @@ export function getAction(url, data = null) {
   }
   return new Promise((res, rej) => {
     wx.request({
-      url: `${baseUrl}${url}${str}`,
+      url: url.includes('http') ? url : `${baseUrl}${url}${str}`,
       timeout: 5000,
       method: "GET",
       dataType: "json",
@@ -63,7 +69,7 @@ export function postAction(
   loadMessage && showLoading(loadMessage);
   return new Promise((res, rej) => {
     wx.request({
-      url: `${baseUrl}${url}`,
+      url: url.includes('http') ? url : `${baseUrl}${url}`,
       method: "POST",
       data,
       dataType: "json",
@@ -72,7 +78,10 @@ export function postAction(
       success: (data) => {
         loadMessage && hideLoading();
         let result = data.data;
-        const { code, msg } = result;
+        const {
+          code,
+          msg
+        } = result;
         if (code == 200) {
           isShowMessage &&
             showToast({
@@ -85,8 +94,8 @@ export function postAction(
             title: msg || "",
             icon: "error",
           });
+          rej('')
         }
-        res("");
       },
       fail: (err) => {
         hideLoading();
@@ -95,7 +104,7 @@ export function postAction(
           icon: "error",
         });
         rej(err);
-      },
+      }
     });
   });
 }

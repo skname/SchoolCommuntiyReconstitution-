@@ -19,7 +19,7 @@ Page({
     captchaUrl: '',
     grade: '',
     isShow: false,
-    icons: ['https://s1.ax1x.com/2022/10/10/xtMUQ1.png']
+    icons: ['https://img.skself.work/icon/index/update.png']
   },
   handlePreview: preview,
   /**

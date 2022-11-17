@@ -8,7 +8,7 @@
   <!-- 置顶位置 -->
   <card-component class="card-component" wx:if="{{topArticle !=null}}" articleInfo="{{topArticle}}" isTop="{{true}}" />
 
-  <view class="content" style="margin-top: {{topArticle!=null?'': '17vh'}};">
+  <view class="content" style="margin-top: {{topArticle!=null?'': '14vh'}};">
     <slot></slot>
   </view>
 </view>
