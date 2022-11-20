@@ -5,7 +5,9 @@ import {
   isDef,
   pageScrollTo,
   checkSymbol,
-  nextTickRender
+  nextTickRender,
+  preview,
+  chooseImage
 } from '../../utils/index.js';
 
 import {
@@ -18,7 +20,8 @@ Page({
     isShow: false,
     isFocus: false,
     commentContent: '',
-    nickName: ''
+    nickName: '',
+    commentPic: []
   },
   sendCommont(event) { // 做节流
     this.hideChildComponent()
@@ -58,14 +61,17 @@ Page({
     })
   },
   async submit() {
-    const comment = this.data.commentContent
-    if (!isDef(comment)) {
+    const {
+      commentContent,
+      commentPic
+    } = this.data;
+    if (!isDef(commentContent) && commentPic.length == 0) {
       return showToast({
         title: '评论内容为空!',
         icon: 'error'
       })
     }
-    this.sendData.content = checkSymbol(comment)
+    this.sendData.content = checkSymbol(commentContent)
     submitRequest.call(this, this.sendData)
   },
   hideChildComponent() {
@@ -84,6 +90,7 @@ Page({
       isFocus: true
     })
   },
+  handlePreview: preview,
   handleInput(event) {
     this.setData({
       commentContent: event.detail.value
@@ -96,6 +103,21 @@ Page({
     } = event.currentTarget.dataset;
     routerAndParam(url, {
       openId
+    })
+  },
+  handleSelectImage() {
+    const that = this;
+    chooseImage({
+      count: 1 - that.data.commentPic.length
+    }, file => {
+      that.setData({
+        commentPic: file
+      })
+    })
+  },
+  handlDelete() {
+    this.setData({
+      commentPic: []
     })
   },
   /** 

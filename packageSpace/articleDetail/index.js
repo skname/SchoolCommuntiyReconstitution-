@@ -2,7 +2,11 @@ import {
   getAction,
   postAction,
   showToast,
-  validatorRouter
+  validatorRouter,
+  uploadByQiNiu,
+  ARTICLE_PIC,
+  showLoading,
+  hideLoading
 } from '../../utils/index.js'
 
 export function initComment(aid) {
@@ -33,7 +37,16 @@ export function isLoginAndBind(loginable = true, bindable = true) {
   return isLoginAndBind
 }
 export async function submitRequest(data) {
+  showLoading({
+    mask: true,
+    title: '评论中...'
+  })
   try {
+    if (this.data.commentPic.length) {
+      const url = await uploadByQiNiu(this.data.commentPic, ARTICLE_PIC);
+      data.content += ('::COMMITPICTDYY::' + url);
+    }
+    hideLoading()
     await postAction('/article/comments/add', data, {
       title: '评论中...',
       mask: true
@@ -42,7 +55,8 @@ export async function submitRequest(data) {
     wx.nextTick(() => {
       this.setData({
         isShow: false,
-        commentContent: ''
+        commentContent: '',
+        commentPic: []
       })
     })
     initComment.call(this, this.data.articleInfo.aid)

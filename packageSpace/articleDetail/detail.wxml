@@ -9,14 +9,20 @@
       <view class="comment-item-right" catchtap="sendCommont" data-type="2" data-nickname="{{item.nickName}}" data-replyopenid="{{item.comOpenid}}" data-comid="{{item.comId}}" data-aid="{{articleInfo.aid}}">
         <view class="comment-nickName">{{item.nickName}}</view>
         <view class="comment-content" user-select="true"> {{item.comContent}}</view>
+        <view class="commit-picture" wx:if="{{item.commentContentPic}}">
+          <image class="image" mode="aspectFill" catchtap="handlePreview" data-current="0" data-imgs="{{[item.commentContentPic]}}" src="{{item.commentContentPic}}"></image>
+        </view>
         <!-- 二级评论 -->
         <view class="comment-child" wx:if="{{item.replyList.length> 0}}">
           <view id="{{'two'+item.replyId}}" class="comment-child-item {{positionId == 'two'+item.replyId ? 'newComment': ''}}" data-type="2" wx:for="{{item.replyList}}" wx:key="index" catchtap="sendCommont" data-nickname="{{item.replyName}}" data-aid="{{articleInfo.aid}}" data-replyopenid="{{item.replyOpenid}}" data-comid="{{item.comId}}">
             <text catchtap="handleRouter" data-openid="{{item.replyOpenid}}">{{item.replyName}}</text>
-            <text wx:if="{{item.nickName!=null}}" style="color:#000;">回复</text>
+            <text wx:if="{{item.nickName!=null}}" style="color:#000;"> 回复 </text>
             <text wx:if="{{item.nickName!=null}}" catchtap="handleRouter" data-openid="{{item.replyComOpenid}}">{{item.nickName}}</text>
             <text>:</text>
-            <text style="color:#000;" user-select="true">{{item.replyContent}}</text>
+            <view style="color:#000;" user-select="true">{{item.replyContent}}</view>
+            <view class="commit-picture" wx:if="{{item.commentContentPic}}">
+              <image class="image" mode="aspectFill" catchtap="handlePreview" data-current="0" data-imgs="{{[item.commentContentPic]}}" src="{{item.commentContentPic}}"></image>
+            </view>
           </view>
         </view>
         <!-- 评论时间 -->
@@ -31,7 +37,15 @@
   </view>
   <!-- 评论框 -->
   <view class="mask-content" catchtap="handleFocus" wx:if="{{isShow}}">
-    <textarea class="input" placeholder="回复{{nickName}}" cursor-spacing="20" maxlength="800" focus="{{isFocus}}" bindinput="handleInput"></textarea>
-    <view class="button" catchtap="submit">发送</view>
+    <textarea class="input" placeholder="回复{{nickName}}" cursor-spacing="100" maxlength="800" focus="{{isFocus}}" bindinput="handleInput"></textarea>
+    <view class="mask-content-bottom">
+      <view class="bottom-left">
+        <image class="icon" catchtap="handleSelectImage" mode="aspectFill" src="https://img.skself.work/icon/index/pictureIcon.png"></image>
+      </view>
+      <view class="bottom-right">
+        <image wx:if="{{commentPic!=''}}" class="image" mode="aspectFill" src="{{commentPic[0]}}" catchtap="handlDelete"></image>
+        <view class="button" catchtap="submit">发布</view>
+      </view>
+    </view>
   </view>
 </view>

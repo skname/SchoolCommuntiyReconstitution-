@@ -1,6 +1,6 @@
 const Reg = /[&|#|$|/|\\]/
 export function checkSymbol(str = '') {
-  if (str == '') return;
+  if (str == '') return '';
   let content = [...str];
   let curr = content.join('').match(Reg)
   while (curr) {

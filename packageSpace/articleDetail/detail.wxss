@@ -55,7 +55,8 @@
   width: 100%;
   box-sizing: border-box;
   padding: 20rpx;
-  background-color: rgba(231, 229, 229, 0.521);
+  background-color: #f2f3f7;
+  border-radius: 20rpx;
 }
 
 .comment-item-right .comment-child .comment-child-item {
@@ -86,40 +87,75 @@
   border: 1rpx solid #ccc;
   background-color: #fff;
 }
-
+/* 评论框 */
 .mask-content {
-  padding: 20rpx;
-  box-sizing: border-box;
   width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 30rpx 25rpx;
+  border-radius: 20rpx 20rpx 0 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 9;
+}
+
+.mask-content textarea {
+  width: 100%;
+  height: 10vh;
+  background-color: #f2f2f6;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+}
+
+.mask-content-bottom {
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom-left,
+.bottom-right {
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: fixed;
-  bottom: 0;
-  z-index: 999;
-  background-color: rgb(245, 244, 244);
+  position: relative;
 }
-
-.mask-content .input {
-  padding: 20rpx 20rpx;
-  flex: 1;
-  height: 5vh;
-  background-color: #fff;
-  border-radius: 20rpx;
+.bottom-right .image {
+  width: 11vw;
+  height: 11vw;
+  border-radius: 10rpx;
   margin-right: 20rpx;
 }
 
+.bottom-right .image::after {
+  content: "×";
+  position: absolute;
+  font-size: 40rpx;
+  font-weight: bolder;
+  top: 0rpx;
+  right: 140rpx;
+  background-color: #fcbc39;
+  padding: 0 10rpx;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+.bottom-left .icon {
+  width: 10vw;
+  height: 10vw;
+}
 .mask-content .button {
   color: #fff;
   width: 140rpx;
   height: 70rpx;
   text-align: center;
   line-height: 70rpx;
-  background-color: #3AB54D;
+  background-color: #3ab54d;
   border-radius: 20rpx;
 }
-
-/* 评论抖动 */
+/* 评论闪动 */
 @keyframes newCommentAnimation {
   0% {
     background-color: initial;
@@ -141,4 +177,14 @@
   animation-duration: 1s;
   animation-delay: 0s;
   animation-iteration-count: 2;
+}
+/* 评论图片 */
+.comment-item-right .commit-picture {
+  width: 100%;
+}
+.comment-item-right .commit-picture .image {
+  margin-top: 10rpx;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 20rpx;
 }

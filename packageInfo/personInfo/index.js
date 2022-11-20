@@ -8,7 +8,8 @@ import {
   throttle,
   chooseImage,
   upload,
-  getUserInfo
+  getUserInfo,
+  back
 } from '../../utils/index.js';
 
 const handleUpdate = async function () {
@@ -40,6 +41,7 @@ const handleUpdate = async function () {
     value.nickName = nickName;
     value.userInfo = userInfo;
     value.userSex = userSex;
+    back()
   })
 }
 

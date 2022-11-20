@@ -6,11 +6,7 @@
   <!-- 选择照片 -->
   <select-image class="select-image" imageBox="{{imageBox}}" bind:reRenderImageBox="handleImageBox" />
   <!-- <view class="title">发布类型</view> -->
-  <picker-component class="picker-component" 
-  bind:handlePickChang="handlePickChang" 
-  title="选择发布类型" ranges="{{selectType}}" 
-  select="{{selectIndex}}" 
-  rangeKey="name" />
+  <picker-component class="picker-component" bind:handlePickChang="handlePickChang" title="选择发布类型" ranges="{{selectType}}" select="{{selectIndex}}" rangeKey="name" />
 
   <view class="common-button" bindtap="submit">
     发布

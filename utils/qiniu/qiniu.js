@@ -33,8 +33,9 @@ function generateYounthPicDir(id, dep, className) {
   return path;
 }
 
+
 function generateFileName(fileDir, filePath) {
-  return fileDir + filePath.split('tmp')[1];
+  return fileDir + '/' + filePath.split('tmp')[1];
 }
 export function qiniuUpload(fileUrl, token, fileName) {
   return new Promise((res, rej) => {
@@ -68,12 +69,11 @@ async function getToken() {
   } = await getAction('/artpic/getToken');
   return data.token
 }
- 
+
 export async function uploadByQiNiu(filePaths, FileDir) {
   const token = await getToken()
   const promise = filePaths.map(item => {
     const filePath = generateFileName(FileDir, item)
-    console.log(filePath)
     return qiniuUpload(item, token, filePath);
   })
   const result = await Promise.all(promise);

@@ -196,6 +196,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "packageSpace/articleDetail/detail",
+          "query": "detail=%7B%22articleInfo%22%3A%7B%22aid%22%3A629%2C%22content%22%3A%22%E5%BF%83%E4%B8%AD%E6%9C%89%E5%85%9A%EF%BC%8C%E6%88%90%E7%BB%A9%E7%90%86%E6%83%B3%E2%9C%85%20%22%2C%22comId%22%3Anull%2C%22openId%22%3A%22o_fdS46iLNLHcP_K-TwrdULvSk-0%22%2C%22cid%22%3A0%2C%22click%22%3A2%2C%22recommendNum%22%3A0%2C%22createTime%22%3A%2211%E6%9C%8818%2009%3A00%22%2C%22picInfo%22%3Anull%2C%22nickName%22%3A%22%E5%81%B7%E5%81%B7%E6%91%B8%E6%91%B8%E7%9A%84%E7%AC%A8%E7%AC%A8%E7%86%8A%22%2C%22headPic%22%3A%22https%3A%2F%2Fimg.skself.work%2Fhead-picture%2Ff085fc7e4daa49589a962c75ff23d84f.jpg%22%2C%22picInfos%22%3A%5B%22https%3A%2F%2Fimg.skself.work%2Farticle-picture%2F2022%2F11%2F18_b2cd750da9eee736aaf3a30a1ac1667e46216999bb271661.jpg%22%5D%2C%22readNum%22%3A43%2C%22commentNum%22%3A2%2C%22isLikedList%22%3A%5B%22o_fdS46LIcYUrbtr7Jlo-saxtc4g%22%2C%22o_fdS44dL3R2-MnA5NWKejNAnxjg%22%5D%2C%22isLiked%22%3Atrue%7D%7D",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
