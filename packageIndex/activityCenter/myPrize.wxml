@@ -1,0 +1,6 @@
+<view class="container">
+  <view wx:for="{{prizeList}}" wx:key="index" class="prizeList-item flex-row center-align">
+    <text>{{item.prizeName}}</text>
+    <view class="clip-button" catchtap="handleClip" data-code="{{item.prizeCode}}">复制卡密</view>
+  </view>
+</view>

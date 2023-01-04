@@ -1,0 +1,11 @@
+<view class="golbal-mask center" wx:if="{{isShow }}">
+  <view class="help flex-col center-align">
+    <view class="head center">
+      <image class="head-pic" src="{{helpData.headPic}}"></image>
+    </view>
+    <view class="help-bottom flex-row center-align">
+      <view class="help-bottom-item button-left center" catchtap="handleCancel">取消</view>
+      <view class="help-bottom-item button-right center" catchtap="handleHelp">为Ta助力！</view>
+    </view>
+  </view>
+</view>

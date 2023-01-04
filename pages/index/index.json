@@ -1,4 +1,5 @@
 {
   "usingComponents": {
+    "poster": "plugin://poster/poster"
   } 
 } 

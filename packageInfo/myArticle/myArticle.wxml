@@ -1,8 +1,8 @@
 <view class=" person">
   <view class="person-header">
     <image class="back" src="{{icons[2]}}"></image>
-    <view class="userInfo">
-      <view class="up">
+    <view class="userInfo flex-col">
+      <view class="up flex-row center-align">
         <image src="{{userInfo.headPic}}" bindtap="preview" data-current="0" data-imgs="{{[userInfo.headPic]}}" mode="aspectFill"></image>
         <text class="up-text">{{userInfo.nickName}}</text>
         <image class="gender" mode="aspectFit" src="{{userInfo.userSex == '男'? icons[0] : icons[1] }}"></image>

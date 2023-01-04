@@ -11,6 +11,7 @@ function createStore() {
       isOpenMessageEmit: false, // 是否开启消息推送 
       isOpenClassEmit: false, // 是否开启课表推送
       isMpStatus: false, // 是否关注
+      activityData: ''
     },
     mutation: {
       SET_MESSAGE(status, value = true) {
@@ -28,6 +29,9 @@ function createStore() {
       SET_MP_STATUS(status, value = false) {
         status.isMpStatus = value;
         isLogin() && toAttention('关注公众号开启更多玩法！', value)
+      },
+      SET_ACTIVITY_DATA(status, value = '') {
+        status.activityData = value
       }
     }
   }

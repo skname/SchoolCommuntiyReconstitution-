@@ -3,7 +3,7 @@
     <text>点击绑定学号，解锁更多功能</text>
   </view>
   <view class="header" wx:if="{{ isLogin }}" bindtap="handleRouter" data-url="{{list[1].url}}">
-    <view class="header-right">
+    <view class="header-right flex-col">
       <text>昵称：{{ userInfo.nickName}}</text>
       <text>个性签名：{{userInfo.userInfo}}</text>
     </view>
@@ -11,11 +11,11 @@
   </view>
 
   <view class="middle">
-    <view wx:for="{{ list }}" wx:key="index" class="one" data-url="{{item.url}}" bindtap="handleRouter">
+    <view wx:for="{{ list }}" wx:key="index" class="one flex-row center-align" data-url="{{item.url}}" bindtap="handleRouter">
       <text>{{ item.name }}</text>
       <image src="{{icons[0]}}"></image>
     </view>
-    <view class="one">
+    <view class="one flex-row center-align">
       <button style="width: 100%;height: 80rpx;" open-type="feedback" class="feedback"></button>
       <text>意见反馈</text>
       <image src="{{icons[0]}}"></image>
@@ -23,4 +23,5 @@
   </view>
   <view class="common-button" wx:if="{{ isLogin }}" type="warn" bindtap="emitLogin">退出登录</view>
   <view class="common-button" wx:if="{{ !isLogin }}" bindtap="handleLogin">立即登录</view>
+  <activity-component helpData="{{activityData}}" id="component-help"></activity-component>
 </view>

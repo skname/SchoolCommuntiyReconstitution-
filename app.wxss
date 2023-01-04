@@ -9,10 +9,10 @@
   border: 0rpx;
   padding: 0rpx;
   font-size: 32rpx;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   position: relative;
 }
-
 
 .common-button {
   width: 94%;
@@ -20,12 +20,13 @@
   font-size: 35rpx;
   font-weight: bold;
   border-radius: 20rpx;
-  text-align: center;
-  line-height: 7vh;
   color: #fff;
   background-color: #e23e57;
   margin-top: auto;
   margin-bottom: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 九宫格 */
@@ -60,7 +61,7 @@
 .golbal-mask {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   left: 0;
   top: 0;
@@ -74,4 +75,38 @@
   background-color: #cadefc;
   position: absolute;
   bottom: 0;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.center-align {
+  align-items: center;
+}
+.center-justify {
+  justify-content: center;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clip-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 300rpx;
+  height: 70rpx;
+  background-color: #00b8a9;
+  border-radius: 50rpx;
+  box-shadow: 1rpx 1rpx 3rpx 1rpx #8785a2;
 }

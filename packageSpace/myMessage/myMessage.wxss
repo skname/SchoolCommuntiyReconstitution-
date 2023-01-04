@@ -2,12 +2,6 @@
   height: 100%;
 }
 
-.list-item,
-.left {
-  display: flex;
-  flex-direction: row;
-}
-
 .notice-component {
   width: 100%;
   height: 7vh;
@@ -20,19 +14,15 @@
   overflow: hidden;
   padding: 0 20rpx;
   background-color: #fff;
-  align-items: center;
   justify-content: space-between;
   border-bottom: 1rpx solid rgb(238, 237, 237);
-} 
+}
 .left {
   width: 50vw;
-  align-items: center;
 }
 
 .left .middle {
   margin-left: 20rpx;
-  display: flex;
-  flex-direction: column;
   justify-content: space-around;
 }
 

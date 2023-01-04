@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "component-card": "/components/card/card",
-    "component-load": "/components/load/load"
-  },
+    "component-load": "/components/load/load",
+    "component-help": "/components/help/help"
+  }, 
   "enablePullDownRefresh": true
 }

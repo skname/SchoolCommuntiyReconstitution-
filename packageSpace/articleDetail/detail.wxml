@@ -1,8 +1,8 @@
-<view class="container" bindtap="closeInput">
-  <component-card id="component-card" wx:if="{{articleInfo !=null}}" class="card" articleInfo="{{articleInfo}}" isShowTitleAndFooter="{{false}}" isClickDetail="{{false}}" bind:sendCommont="sendCommont" data-type="1" data-aid="{{articleInfo.aid}}" data-nickname="{{articleInfo.nickName}}" />
+<view class="container">
+  <component-card id="component-card" wx:if="{{articleInfo !=null}}" class="card" articleInfo="{{articleInfo}}" isShowTitleAndFooter="{{false}}" isClickDetail="{{false}}" />
   <!-- 评论 -->
   <view class="comment" wx:if="{{comments.length> 0}}">
-    <view id="{{'one'+item.comId}}" class="comment-item {{positionId == 'one'+item.comId ? 'newComment': ''}}" wx:for="{{comments}}" wx:key="index">
+    <view id="{{'one'+item.comId}}" class="comment-item flex-row {{positionId == 'one'+item.comId ? 'newComment': ''}}" wx:for="{{comments}}" wx:key="index">
       <view class="comment-item-left">
         <image catchtap="handleRouter" src="{{item.headPic}}" data-openid="{{item.comOpenid}}" mode="aspectFill"></image>
       </view>
@@ -32,20 +32,52 @@
       </view>
     </view>
   </view>
+  <!-- 动画 -->
   <view wx:else="{{comments.length == 0}}">
     <component-load text="还没有评论,快来评论吧！"></component-load>
   </view>
+  <!-- 底部添加留言按钮 -->
+  <view class="bottom-button flex-row center-justify center-align">
+    <view class="bottom-input flex-row center-align" catchtap="sendCommont" data-type="1" data-aid="{{articleInfo.aid}}" data-nickname="{{articleInfo.nickName}}">
+      <image class="input-headPic" src="{{icons[1]}}"></image>
+      <text class="bottom-input-text">快来留下你的评论吧！</text>
+    </view>
+    <view class="share center">
+      <!-- <button class="share-open" open-type="share"></button> -->
+      <image class="share-button" mode="aspectFill" src="{{icons[0]}}"></image>
+    </view>
+  </view>
   <!-- 评论框 -->
-  <view class="mask-content" catchtap="handleFocus" wx:if="{{isShow}}">
-    <textarea class="input" placeholder="回复{{nickName}}" cursor-spacing="100" maxlength="800" focus="{{isFocus}}" bindinput="handleInput"></textarea>
-    <view class="mask-content-bottom">
-      <view class="bottom-left">
-        <image class="icon" catchtap="handleSelectImage" mode="aspectFill" src="https://img.skself.work/icon/index/pictureIcon.png"></image>
-      </view>
-      <view class="bottom-right">
-        <image wx:if="{{commentPic!=''}}" class="image" mode="aspectFill" src="{{commentPic[0]}}" catchtap="handlDelete"></image>
-        <view class="button" catchtap="submit">发布</view>
+  <view class="golbal-mask" wx:if="{{isShow}}" catchtap="closeInput">
+    <view class="mask-content" style="bottom: {{bottom}}px;" catchtap="handleFocus" wx:if="{{isShow}}">
+      <textarea class="input" placeholder="回复{{nickName}}" maxlength="800" auto-focus="{{isFocus}}" show-confirm-bar="{{false}}" adjust-position="{{false}}" bindinput="handleInput"></textarea>
+      <view class="mask-content-bottom flex-row center-align">
+        <view class="bottom-left flex-row center-align">
+          <image class="icon" catchtap="handleSelectImage" mode="aspectFill" src="https://img.skself.work/icon/index/pictureIcon.png"></image>
+        </view>
+        <view class="bottom-right flex-row center-align">
+          <image wx:if="{{commentPic!=''}}" class="image" mode="aspectFill" src="{{commentPic[0]}}" catchtap="handlDelete"></image>
+          <view class="button" catchtap="submit">发布</view>
+        </view>
       </view>
     </view>
   </view>
+  <!-- 转发弹窗 -->
+  <view class="golbal-mask">
+    <view class="share-win flex-col center-align">
+      <view class="title">分享至</view>
+      <view class="middle-content flex-row">
+        <view class="share-win-item flex-col center-align">
+          <image class="image" mode="aspectFill" src="https://img.skself.work/icon/weChat.png"></image>
+          <text>微信好友</text>
+        </view>
+        <view class="share-win-item flex-col center-align">
+          <image class="image" mode="aspectFill" src="https://img.skself.work/icon/friend.png"></image>
+          <text>朋友圈海报</text>
+        </view>
+      </view>
+      <view class="common-button">取消</view>
+    </view>
+  </view>
+
 </view>

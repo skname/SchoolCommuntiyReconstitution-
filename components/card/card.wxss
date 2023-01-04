@@ -11,9 +11,6 @@
 .card .title {
   width: 100%;
   padding: 20rpx 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   position: relative;
 }
 
@@ -24,8 +21,6 @@
 }
 
 .card .header {
-  display: flex;
-  flex-direction: row;
   padding: 30rpx 0;
 }
 
@@ -38,8 +33,6 @@
 }
 
 .card .headInfo {
-  display: flex;
-  flex-direction: column;
   justify-content: space-around;
   margin-left: 30rpx;
 }
@@ -67,8 +60,6 @@
 }
 
 .card .image-box .two-picture {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -93,51 +84,10 @@
   color: #ccc;
   font-size: 30rpx;
   padding: 20rpx;
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
-.card .read-num .tipWin {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  align-items: center;
-}
-
-.card .read-num .bottom-menu {
-  width: 0;
-  overflow: hidden;
-  border-radius: 10rpx;
-  position: absolute;
-  top: -1.5vh;
-  right: 4vh;
-  display: flex;
-  flex-direction: row;
-  color: #fff;
-  background-color: rgb(59, 59, 59);
-}
-
-.card .read-num .bottom-menu .func {
-  flex: 1;
-  text-align: center;
-  padding: 20rpx;
-  white-space: nowrap;
-  position: relative;
-}
-
-.func .shareButton {
-  top: 0;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 .card .footer {
-  display: flex;
-  flex-direction: row;
   height: 4vh;
   padding-bottom: 20rpx;
 }
@@ -145,10 +95,6 @@
 .card .footer .footer-right,
 .card .footer .footer-left {
   flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 }
 
 .card .text {

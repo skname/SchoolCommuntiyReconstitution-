@@ -1,23 +1,19 @@
+.container {
+  height: 100vh;
+  overflow: hidden;
+}
 .search {
   width: 100%;
   height: 7vh;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  z-index: 999;
   background-color: #fff;
 }
- 
+
 .search-left,
 .search-right {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex: 1;
   position: relative;
-
 }
 
 .search-left image,
@@ -36,9 +32,6 @@
   height: 85%;
   background-color: rgba(228, 225, 224, 0.438);
   border-radius: 50rpx;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-around;
 }
 
@@ -50,17 +43,13 @@
   width: 80%;
   height: 100%;
   text-align: center;
-}
-
-.nav {
-  width: 100vw;
-  height: 8vh;
+  transform: translateX(3vh);
 }
 
 /* 消息提示小红点
  */
 .notice::after {
-  content: '';
+  content: "";
   width: 18rpx;
   height: 18rpx;
   border-radius: 50%;

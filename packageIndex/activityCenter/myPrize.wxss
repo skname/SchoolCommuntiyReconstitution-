@@ -1,0 +1,13 @@
+.container {
+  overflow-y: scroll;
+}
+.container .prizeList-item {
+  width: 80%;
+  border-bottom: 1rpx solid rgb(190, 188, 188);
+  justify-content: space-between;
+}
+.clip-button {
+  margin: 15rpx 0;
+  width: 180rpx;
+  background-color: rosybrown;
+}

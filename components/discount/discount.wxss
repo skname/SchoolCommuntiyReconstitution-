@@ -1,0 +1,73 @@
+.discount {
+  width: 85vw;
+  height: 18vh;
+  border-radius: 20rpx;
+  position: relative;
+}
+.discount-content {
+  height: 80%;
+  color: #fff;
+  justify-content: space-around;
+}
+.discount-content .left {
+  height: 100%;
+  justify-content: center;
+}
+.discount-content .price {
+  font-size: 60rpx;
+  font-weight: bolder;
+}
+.discount-content .condition,
+.bottom {
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.discount-content .condition {
+  margin-top: 10rpx;
+}
+.discount-content .button {
+  width: 22vw;
+  text-align: center;
+  height: 8vw;
+  line-height: 8vw;
+  background-color: #fff;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  margin-left: 50rpx;
+  font-weight: bolder;
+}
+
+.split {
+  width: 100%;
+  border-bottom: #dbe2ef dashed 5rpx;
+  position: relative;
+}
+.split::after,
+.split::before {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #f5f6f6;
+}
+.split::before {
+  content: "";
+  left: 0;
+  transform: translateX(-80%) translateY(-50%);
+}
+.split::after {
+  content: "";
+  right: 0;
+  transform: translateX(80%) translateY(-50%);
+}
+
+.name {
+  position: absolute;
+  font-size: 40rpx;
+  color: rgba(190, 190, 190, 0.281);
+  text-shadow: 2rpx 2rpx rgba(185, 185, 184, 0.432);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotateZ(-15deg);
+}

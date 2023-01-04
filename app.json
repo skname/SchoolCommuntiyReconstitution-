@@ -11,8 +11,11 @@
         "webView/web",
         "getScore/score",
         "getClass/table",
-        "youthLearning/learn",
-        "youthLearning/learnStatus"
+        "discount/discount",
+        "activityCenter/activityCenter",
+        "activityCenter/myPrize",
+        "activityCenter/rank",
+        "manAndGirl/manAndGirl"
       ]
     },
     {
@@ -104,5 +107,10 @@
     "color": "#bfbfbf",
     "selectedColor": "#c3bef0"
   },
+  "plugins": { 
+    "poster": {
+    "version": "1.0.14",
+    "provider": "wx8a6f7c4b3d410554"
+  }},
   "lazyCodeLoading": "requiredComponents"
 }

@@ -26,7 +26,8 @@ Page({
     isLogin: false,
     List: [],
     userInfo: {},
-    icons: iconStorage.get(INFO_ICON)
+    icons: iconStorage.get(INFO_ICON),
+    activityData: null
   },
   // 路由跳转
   handleRouter(event) {

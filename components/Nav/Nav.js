@@ -5,12 +5,13 @@ Component({
       value: []
     },
     topArticle: {
-      type:Object,
+      type: Object,
       value: null
     }
   },
   data: {
-    select: 0
+    select: 0,
+    refresh: true
   },
   methods: {
     handleSelect(event) {
@@ -21,6 +22,9 @@ Component({
       this.setData({
         select: index
       })
+    },
+    handleRefresh() {
+
     }
   }
 })

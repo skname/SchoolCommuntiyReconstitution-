@@ -1,0 +1,16 @@
+<view class="discount flex-col" style="background-color: {{discountInfo.color}};box-shadow: 0 0 20rpx 5rpx {{discountInfo.color}};">
+  <view class="name">{{discountInfo.couponName}}</view>
+
+  <view class="discount-content flex-row center-align">
+    <view class="left flex-col">
+      <text class="price">￥ {{discountInfo.price}} × {{discountInfo.couponNum}}</text>
+      <text class="condition">{{discountInfo.couponDec}}</text>
+    </view>
+    <view class="button" style="color: {{discountInfo.color}};" bindtap="{{cardType==0 ? 'handleGet' : 'handleDelete'}}" data-id="{{discountInfo.id}}">{{cardType == 0 ? '抢券' : '立即使用'}}</view>
+  </view>
+  <view class="split"></view>
+  <view class="bottom flex-col center-justify center-align">
+    有效日期：{{discountInfo.beginTime}} ~ {{discountInfo.endTime}}
+  </view>
+
+</view>

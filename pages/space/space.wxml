@@ -1,20 +1,19 @@
 <view class="container">
-  <view class="search">
-    <view class="search-left">
+  <view class="search flex-row center-align">
+    <view class="search-left flex-col center-align center-justify">
       <image class="{{isHasMessage ? 'notice': ''}}" bindtap="handleRouter" data-url="/packageSpace/myMessage/myMessage" data-bindable="{{false}}" src="{{icons[0]}}" mode="aspectFill"></image>
     </view>
-    <view class="input">
-      <input type="text" bindinput="handleChange" value="{{searchContent}}" placeholder="请输入感兴趣的内容" />
+    <view class="input flex-row center-align">
+      <input type="text" bindinput="handleChange" value="{{searchContent}}" placeholder="关键字搜索" />
       <image src="{{icons[2]}}" mode="aspectFill" catchtap="handleSearch"></image>
     </view>
-    <view class="search-right" bindtap="handleRouter" data-url="/packageSpace/send/send" data-bindable="{{false}}">
+    <view class="search-right flex-col center-justify center-align" bindtap="handleRouter" data-url="/packageSpace/send/send" data-bindable="{{false}}">
       <image src="{{icons[1]}}" mode="aspectFill"></image>
     </view>
   </view>
-
-  <component-nav topArticle="{{topArticle}}" class="nav" bindhandleSelect="switchPage" nav="{{navigationList}}">
-    <view wx:for="{{cardList}}" wx:key="index">
-      <component-card class="image-lazy" wx:for="{{item}}" wx:key="aid" articleInfo="{{item}}" />
-    </view>
-  </component-nav>
+    <component-nav topArticle="{{topArticle}}" class="nav" bindhandleSelect="switchPage" nav="{{navigationList}}">
+      <view wx:for="{{cardList}}" wx:key="index">
+        <component-card class="image-lazy" wx:for="{{item}}" wx:key="aid" articleInfo="{{item}}" />
+      </view>
+    </component-nav>
 </view>

@@ -1,12 +1,4 @@
-.header,
-.headPic {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.userInfo .userInfo-item,
-.studentInfo-item {
+.userInfo .userInfo-item {
   position: relative;
   margin-bottom: 20rpx;
   display: flex;
@@ -35,7 +27,7 @@
 }
 
 .userInfo .userInfo-item-foucs {
-  transition: .5s all;
+  transition: 0.5s all;
   border-bottom: 1rpx solid #aa96da;
 }
 

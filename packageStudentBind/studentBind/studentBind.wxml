@@ -11,7 +11,7 @@
       </view>
       <view class="input-group {{passwd_focus ? 'active' : ''}}">
         <text class="input-label">密码</text>
-        <input model:value="{{studentPassword}}" cursor-spacing="30" id="passwd" placeholder="没更改前密码为学号" bindfocus="inputFocus" bindblur="inputBlur" />
+        <input model:value="{{studentPassword}}" cursor-spacing="30" id="passwd" placeholder="密码同步教务系统密码" bindfocus="inputFocus" bindblur="inputBlur" />
       </view>
       <view class="verific-form">
         <view class="input-group  {{verific_focus ? 'active' : ''}}">

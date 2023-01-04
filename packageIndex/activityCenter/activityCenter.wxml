@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="top flex-col center-align">
+    <ad unit-id="adunit-1b2d91e1cca88c35"></ad>
+    <view class="top-buttom flex-row center-align">
+      <view class="button" catchtap="handleRouter" data-url="/packageIndex/activityCenter/myPrize">我的奖品</view>
+      <view class="button" catchtap="handleRouter" data-url="/packageIndex/activityCenter/rank">助力排行榜</view>
+    </view>
+    <view style="color:#f64662;">每5个好友助力得一次抽奖机会哦!</view>
+  </view>
+  <!-- 抽奖区 -->
+  <view class="bottom center">
+    <view class="top-num">已有 <text class="num-symbol">{{activeNum}}</text> 人为您助力!</view>
+    <view class="bottom-num">您还有 <text class="num-symbol">{{num}}</text> 次抽奖机会!</view>
+    <view class="box center">
+      <view class="box-prize flex-row">
+        <view class="prize-item " wx:for="{{prizeList}}" wx:key="index">
+          <view wx:if="{{item.id != 99}}" class="money flex-col center-align center-justify {{item.id == select ? 'select': ''}}">
+            <image src="{{item.icon}}" class="image" mode="aspectFill"></image>
+            <text>{{item.name}}</text>
+          </view>
+          <view bindtap="handleStart" wx:if="{{item.id == 99}}" class="money flex-col center-align center-justify">
+            <text class="text-button">抽奖</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="invite">
+      <view class="text center">邀请好友助力</view>
+      <button class="invite-button" open-type="share"></button>
+    </view>
+  </view>
+  <!-- 中奖模板 -->
+  <view class="golbal-mask center" bindtap="closeMask" wx:if="{{isShow}}">
+    <view class="prize-content flex-col center-align " catchtap="handleStatic">
+      <text style="font-weight: bolder;">恭喜你中奖了!</text>
+      <text class="num-symbol" style="font-size: 50rpx;">{{prizeData.prizeName}}</text>
+      <view class="clip-button" catchtap="clipboardData">复制兑奖卡密</view>
+    </view>
+  </view>
+  <component-help helpData="{{helpData}}" class="component-help" id="component-help"></component-help>
+</view>

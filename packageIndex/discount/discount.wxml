@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="top flex-row center-align">
+    <view class="top-item {{select == 0 ? 'select': ''}}" bindtap="handleSelect" data-select="0">卡券中心</view>
+    <view class="split">|</view>
+    <view class="top-item {{select == 1 ? 'select': ''}}" bindtap="handleSelect" data-select="1">我的卡券</view>
+  </view>
+  <view class="content">
+    <view class="content-item flex-col center-justify center-align" wx:if="{{select == 0}}">
+      <discount-component wx:for="{{discountList}}" wx:key="index" discountInfo="{{item}}" class="discount-component" />
+    </view>
+    <view class="content-item flex-col center-justify center-align" wx:if="{{select == 1}}">
+      <discount-component class="discount-component" wx:for="{{myDiscountList}}" wx:key="index" data-index="{{index}}" bind:handleDelete="handleDelete" discountInfo="{{item}}" cardType="{{1}}" />
+    </view>
+  </view>
+</view>

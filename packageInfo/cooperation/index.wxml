@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container center-justify">
   <view style="margin-bottom:10vh;color: 35rpx;font-weight: bolder;">具体请联系太大丫丫</view>
   <image style="width: 90%;" src="{{icons[0]}}" bindtap="preview" data-imgs="{{icons}}" data-current="{{index}}" mode="aspectFill"></image>
 </view>

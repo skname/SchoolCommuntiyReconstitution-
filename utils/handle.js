@@ -192,3 +192,13 @@ export function toAttention(title, isMpStatus) {
     }
   })
 }
+
+// 设置剪贴板内容
+export function handleClipboardData(data, fn = null) {
+  wx.setClipboardData({
+    data,
+    success() {
+      fn && fn()
+    }
+  })
+}

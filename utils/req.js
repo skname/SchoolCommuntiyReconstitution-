@@ -37,13 +37,13 @@ export function getAction(url, data = null) {
         if (data.cookies[0]) {
           cookieBase = data.cookies[0].split(";")[0];
         }
-        // if (data.data.code != 200) {
-        //   showToast({
-        //     title: data.data.msg,
-        //     icon: 'error'
-        //   })
-        //   return;
-        // }
+        if (data.data.code != 200) {
+          showToast({
+            title: data.data.msg,
+            icon: 'error'
+          })
+          return;
+        }
         res(data.data);
       },
       fail: (err) => {

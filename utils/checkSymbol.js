@@ -1,4 +1,4 @@
-const Reg = /[&|#|$|/|\\]/
+const Reg = /[&|$|/|\\]/
 export function checkSymbol(str = '') {
   if (str == '') return '';
   let content = [...str];

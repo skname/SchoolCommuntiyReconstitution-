@@ -11,6 +11,9 @@ import {
   getStudentInfo,
   clearData
 } from '../../utils/index.js';
+import {
+  Store
+} from "../../store/index.js"
 // 刷新 
 export async function reflash() {
   const value = getUserInfo()
@@ -62,6 +65,7 @@ export function bindRender(data) {
 }
 
 export function login() {
+  const that = this;
   showLoading()
   wx.login({
     success: async ({
@@ -84,6 +88,19 @@ export function login() {
         }
         loginRender.call(this, result, true); // 第一次登录
         setStorage(USERINFO, result);
+
+        // 判断是否有活动
+        if (Store.status.activityData) {
+          this.setData({
+            activityData: Store.status.activityData
+          })
+          // 弹窗显示
+          const componentHelp = that.selectComponent('#component-help')
+          componentHelp.setData({
+            isShow: true
+          })
+          Store.commit('SET_ACTIVITY_DATA'); // 清空
+        }
       } catch {}
     }
   })

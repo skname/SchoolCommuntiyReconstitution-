@@ -1,6 +1,6 @@
 <view class="card" bindtap="{{isClickDetail? 'handleRouterAndParam': ''}}" data-detail="{{articleInfo}}" data-url="../../packageSpace/articleDetail/detail">
   <!-- 文章标题类型 -->
-  <view wx:if="{{isShowTitleAndFooter}}" class="title">
+  <view wx:if="{{isShowTitleAndFooter}}" class="title flex-row center-align">
     <image class="icon" src="{{typeIcons[articleInfo.cid]}}" mode="aspectFit"></image>
     <text style="color:{{nav[articleInfo.cid].color}}">{{nav[articleInfo.cid].name}}</text>
     <view wx:if="{{isMine}}" mode="aspectFill" class="deleteButton" catchtap="handleDelete" data-aid="{{articleInfo.aid}}">
@@ -8,12 +8,12 @@
     </view>
   </view>
   <!-- 头像 -->
-  <view class="header" wx:if="{{!isTop}}">
+  <view class="header flex-row" wx:if="{{!isTop}}">
     <view class="headPic" catchtap="handleRouter" data-openid="{{articleInfo.openId}}" data-url="/packageInfo/myArticle/myArticle">
       <image class="image" src="{{articleInfo.headPic}}" mode="aspectFill"></image>
     </view>
-    <view class="headInfo">
-      <text user-select="true" style="{{openId == articleInfo.openId ? 'color: #fce38a;font-weight: bolder;': ''}} ">{{articleInfo.nickName}}</text>
+    <view class="headInfo flex-col">
+      <text user-select="true" style="{{openId1 == articleInfo.openId ? 'color: #fce38a;font-weight: bolder;': openId2== articleInfo.openId ? 'color: #fc5185;font-weight: bolder;': ''}} ">{{articleInfo.nickName}}</text>
       <text class="create-time">{{articleInfo.createTime}}</text>
     </view>
   </view>
@@ -22,13 +22,13 @@
     <text class="text-ellipsis" user-select="{{!isShowTitleAndFooter}}" class="text">{{articleInfo.content}}</text>
   </view>
   <!-- 图片区域 -->
-  <view class="image-box" id="{{articleInfo.aid}}" wx:if="{{articleInfo.picInfos.length > 0}}">
+  <view class="image-box" id="{{articleInfo.aid}}" wx:if="{{!isTop && articleInfo.picInfos.length > 0}}">
     <!-- 一张 -->
     <view class="one-picture" wx:if="{{articleInfo.picInfos.length == 1}}">
       <image catchtap="{{isClickDetail? '': 'preview'}}" data-imgs="{{isShowTitleAndFooter? '':articleInfo.picInfos}}" data-current="0" class="image-one" src="{{articleInfo.picInfos[0]}}" mode="aspectFit"></image>
     </view>
     <!-- 两张四张 -->
-    <view class="two-picture" wx:if="{{articleInfo.picInfos.length == 2 ||articleInfo.picInfos.length == 4}}">
+    <view class="two-picture flex-row" wx:if="{{articleInfo.picInfos.length == 2 ||articleInfo.picInfos.length == 4}}">
       <image wx:for="{{articleInfo.picInfos}}" catchtap="{{isClickDetail? '': 'preview'}}" data-imgs="{{isShowTitleAndFooter? '':articleInfo.picInfos}}" class="image" wx:key="index" data-current="{{index}}" src="{{item}}" mode="aspectFill"></image>
     </view>
     <!-- 多张 -->
@@ -37,30 +37,16 @@
     </view>
   </view>
   <!-- 菜单 -->
-  <view class="read-num">
+  <view class="read-num flex-row">
     <text>浏览量：{{articleInfo.readNum}}</text>
-    <view class="tipWin" catchtap="openShow" wx:if="{{!isShowTitleAndFooter}}">
-      <view class="bottom-menu">
-        <view class="func">
-          转载
-          <button class="shareButton" catchtap="hideShow" size="mini" open-type="share">分享</button>
-        </view>
-        <view class="func" catchtap="handleSend">
-          评论
-        </view>
-      </view>
-      <view style="width: 7vw;">
-        <image class="icon" src="{{icons[4]}}"></image>
-      </view>
-    </view>
   </view>
   <!-- 点赞 -->
-  <view wx:if="{{isShowTitleAndFooter}}" class="footer">
-    <view class="footer-left">
+  <view wx:if="{{isShowTitleAndFooter}}" class="footer flex-row">
+    <view class="footer-left flex-row center-align center-justify">
       <image class="icon" mode="aspectFit" src="{{icons[0]}}"></image>
       <text class="text">{{articleInfo.commentNum}}</text>
     </view>
-    <view class="footer-right" catchtap="{{articleInfo.isLiked?'cancelLike':'giveLike'}}">
+    <view class="footer-right flex-row center-align center-justify" catchtap="{{articleInfo.isLiked?'cancelLike':'giveLike'}}">
       <image wx:if="{{!articleInfo.isLiked}}" class="icon" mode="aspectFit" src="{{ icons[1]}}"></image>
       <image wx:if="{{articleInfo.isLiked}}" class="icon" mode="aspectFit" src="{{ icons[2] }}"></image>
       <text class="text" style="color:{{articleInfo.isLiked?'#62D5C9':''}}">{{articleInfo.click}}</text>

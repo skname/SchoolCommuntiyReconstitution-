@@ -1,0 +1,10 @@
+<view class="container">
+  <view wx:for="{{rankList}}" wx:key="index" class="rank flex-row center-align">
+    <view class="flex-row center-align">
+      <text class="text rank-num">{{index + 1}}</text>
+      <image class="headPic" src="{{item.headPic}}"></image>
+      <text>{{item.nickName}}</text>
+    </view>
+    <view class="text">{{item.clickNum}}</view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<view class="share-button">
+  <button class="share" open-type="share"></button>
+  <slot class="slot"></slot>
+</view>

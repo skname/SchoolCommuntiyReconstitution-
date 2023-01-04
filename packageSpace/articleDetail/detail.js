@@ -7,7 +7,9 @@ import {
   checkSymbol,
   nextTickRender,
   preview,
-  chooseImage
+  chooseImage,
+  COMMONT_ICONS,
+  iconStorage
 } from '../../utils/index.js';
 
 import {
@@ -21,10 +23,12 @@ Page({
     isFocus: false,
     commentContent: '',
     nickName: '',
-    commentPic: []
+    icons: iconStorage.get(COMMONT_ICONS),
+    commentPic: '',
+    bottom: 0
   },
-  sendCommont(event) { // 做节流
-    this.hideChildComponent()
+  sendCommont(event) { // 做节流 
+    const that = this;
     // 检查是否绑定
     if (!isLoginAndBind(true, false)) {
       return
@@ -52,12 +56,18 @@ Page({
         replyOpenid: replyopenid
       }
     }
-
     this.sendData = data;
     this.setData({
       isShow: true,
       nickName: nickname,
-      isFocus: true
+      isFocus: true,
+    })
+    wx.nextTick(() => {
+      wx.onKeyboardHeightChange(res => {
+        that.setData({
+          bottom: res.height
+        })
+      })
     })
   },
   async submit() {
@@ -74,12 +84,7 @@ Page({
     this.sendData.content = checkSymbol(commentContent)
     submitRequest.call(this, this.sendData)
   },
-  hideChildComponent() {
-    const compoennt = this.selectComponent('#component-card')
-    compoennt.hideShow() // 隐藏转载
-  },
   closeInput() {
-    this.hideChildComponent()
     this.setData({
       isShow: false,
       isFocus: false
@@ -135,6 +140,7 @@ Page({
         positionId: detail.positionId
       })
     }
+
     nextTickRender.call(this, {
       articleInfo: detail.articleInfo
     })

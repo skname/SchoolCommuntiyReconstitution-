@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "discount-component": "/components/discount/discount"
+  }
+}

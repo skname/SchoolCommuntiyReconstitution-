@@ -1,0 +1,32 @@
+.content,
+.content-item,
+.top {
+  width: 100%;
+}
+.top {
+  text-align: center;
+  font-size: 35rpx;
+}
+.top-item {
+  flex: 1;
+  height: 7vh;
+  line-height: 7vh;
+  color: #645c84;
+}
+.split {
+  color: #d45d79;
+  font-size: 40rpx;
+}
+
+.select {
+  font-weight: 1000;
+}
+
+/* 内容 */
+.content {
+  width: 100%;
+}
+
+discount-component{
+  margin-bottom: 50rpx;
+}

@@ -10,23 +10,10 @@
   width: 100vw;
   height: 7vh;
   white-space: nowrap;
-  position: fixed;
   box-shadow: 0 0 1rpx 3rpx rgba(209, 208, 206, 0.411);
-  top: 7vh;
   background-color: #fff;
-  z-index: 999;
-}
-
-.component-nav .nav-slide {
-  top: 0;
-  width: 15vw;
-  height: 7vh;
-  position: absolute;
   box-sizing: border-box;
-  border-bottom: 5rpx solid #c3bef0;
-  transition: all 0.3s;
 }
-
 /* 导航字体间隔 */
 .component-nav .nav-item {
   overflow: hidden;
@@ -34,7 +21,7 @@
   line-height: 7vh;
   text-align: center;
   display: inline-block;
-  width: 15vw;
+  padding: 0 20rpx;
   height: 100%;
 }
 
@@ -46,6 +33,9 @@
 .select {
   color: #c3bef0;
   font-weight: bolder;
+  border-bottom: 5rpx solid #c3bef0;
+  box-sizing: border-box;
+  transition: all 0.3s;
 }
 
 .top-banner {
@@ -54,6 +44,12 @@
 }
 
 .content {
+  background-color: aqua;
   width: 100%;
   background-color: #f5f6f6;
+}
+
+/* 滚动view */
+.scroll-view {
+  height: 86vh;
 }

@@ -23,7 +23,8 @@ Component({
     typeIcons: iconStorage.get(ARTICLE_TYPE_ICONS),
     nav: navigationList,
     isShow: false,
-    openId: 'o_fdS46LIcYUrbtr7Jlo-saxtc4g'
+    openId1: 'o_fdS46LIcYUrbtr7Jlo-saxtc4g',
+    openId2: 'o_fdS4zt7U0pfXX_ZP4bs3YQBVFc'
   },
   properties: {
     articleInfo: Object,
@@ -39,7 +40,7 @@ Component({
       type: Boolean,
       value: false
     },
-    isTop: {
+    isTop: { // 是否置顶
       type: Boolean,
       value: false
     }
@@ -74,11 +75,9 @@ Component({
         return
       }
       proxyThrottle.call(this)
-      this.hideShow()
     },
     cancelLike() {
       proxyThrottle.call(this)
-      this.hideShow()
     },
     handleDelete(event) {
       showModal({
@@ -92,25 +91,6 @@ Component({
           }
         }
       })
-    },
-    openShow() {
-      this.animate('.bottom-menu', [{
-          width: '0'
-        },
-        {
-          width: '250rpx'
-        }
-      ], 100)
-    },
-    hideShow() {
-      this.animate('.bottom-menu', [{
-        width: '0'
-      }], 0)
-    },
-    handleSend() {
-      this.hideShow()
-      // 调用父组件方法
-      this.triggerEvent('sendCommont')
     }
   }
 })

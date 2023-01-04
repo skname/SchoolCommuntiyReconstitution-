@@ -1,17 +1,9 @@
 <view class="container">
-  <view class="header">
-    <view class="headPic" bindtap="handleUpdateHeadPic">
+  <view class="header flex-row center-align center-justify">
+    <view class="headPic flex-row center-align center-justify" bindtap="handleUpdateHeadPic">
       <image src="{{headPic}}" mode="aspectFill"></image>
     </view>
   </view>
-  <!-- 绑定信息 -->
-  <!-- <view class="studentInfo" wx:if="{{isBind}}">
-    <view class="studentInfo-item">姓名：{{studentNum.name}}</view>
-    <view class="studentInfo-item">学号：{{studentNum.id}}</view>
-    <view class="studentInfo-item">班级：{{studentNum.classNo}}</view>
-    <view class="studentInfo-item">系别：{{studentNum.department}}</view>
-  </view> -->
-  <!-- 用户信息 -->
   <view class="userInfo">
     <view id="nickName" class="userInfo-item {{focusId == 'nickName' ? 'userInfo-item-foucs': ''}}" bindtap="handleFocus">
       <text class="title">昵称</text>

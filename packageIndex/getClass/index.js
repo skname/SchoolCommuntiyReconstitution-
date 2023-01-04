@@ -15,7 +15,7 @@ from '../../utils/index.js'
 import {
   Store
 } from '../../store/index.js'
-let colorList = ["#f9a1bc", "#769fcd", "#aa96da", "#71c9ce", "#f2c6b4", "#e6a4b4", "#c3bef0", '#ffe2e2', "#769fcd"]
+let colorList = ["#f9a1bc", "#769fcd", "#aa96da", "#71c9ce", "#f2c6b4", "#e6a4b4", "#c3bef0", '#b9bbdf', "#769fcd"]
 
 // 格式化
 function handleClass(data) {

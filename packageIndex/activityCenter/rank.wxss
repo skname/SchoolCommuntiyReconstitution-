@@ -1,0 +1,24 @@
+.container {
+  overflow-y: scroll;
+  height: 100%;
+}
+.rank {
+  width: 90%;
+  height: 12vh;
+  justify-content: space-between;
+}
+.rank .headPic {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  margin: 0 20rpx;
+}
+
+.text {
+  font-weight: bolder;
+  color: #ffb400;
+  font-size: 40rpx;
+}
+.rank-num {
+  color: #000;
+}

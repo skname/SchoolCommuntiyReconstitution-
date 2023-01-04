@@ -11,5 +11,5 @@
   <view class="common-button" bindtap="submit">
     发布
   </view>
-
+ 
 </view>

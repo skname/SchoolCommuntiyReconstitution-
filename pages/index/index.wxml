@@ -11,14 +11,14 @@
   </view>
   <view class="middle">
     <!-- 程序内跳转 -->
-    <view class="middle-item" wx:for="{{menus}}" bindtap="routerTo" wx:key="id" data-url="{{item.url}}" data-bindable="{{item.bindable}}" data-loginable="{{item.loginable}}">
-      <image src=" {{icons[item.id]}}" mode="aspectFit">
+    <view class="middle-item flex-col center-align" wx:for="{{menus}}" bindtap="routerTo" wx:key="id" data-url="{{item.url}}" data-bindable="{{item.bindable}}" data-loginable="{{item.loginable}}">
+      <image src=" {{item.icon}}" mode="aspectFit">
       </image>
       <text>{{item.name}}</text>
     </view>
     <!-- 其他小程序跳转 -->
-    <view class="middle-item" wx:for="{{otherMenus}}" wx:key="id" bindtap="toApp" data-appid="{{item.appId}}" data-url="{{item.url}}">
-      <image src="{{icons[item.id]}}" mode="aspectFit"></image>
+    <view class="middle-item flex-col center-align" wx:for="{{otherMenus}}" wx:key="id" bindtap="toApp" data-appid="{{item.appId}}" data-url="{{item.url}}">
+      <image src="{{item.icon}}" mode="aspectFit"></image>
       <text>{{item.name}}</text>
     </view>
   </view>

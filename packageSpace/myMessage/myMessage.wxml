@@ -1,9 +1,9 @@
 <view class="container">
   <component-select isChecked="{{isChecked}}" bind:handleSelect="handleSelect" class="notice-component">开启消息提醒</component-select>
-  <view wx:for="{{list}}" class="list-item" wx:key="index" bindtap="handleRouterAndParam" data-index="{{index}}" data-detail="{{item.articleInfo}}" data-positionid="{{item.positionId}}" data-url="/packageSpace/articleDetail/detail">
-    <view class="left">
+  <view wx:for="{{list}}" class="list-item flex-row center-align" wx:key="index" bindtap="handleRouterAndParam" data-index="{{index}}" data-detail="{{item.articleInfo}}" data-positionid="{{item.positionId}}" data-url="/packageSpace/articleDetail/detail">
+    <view class="left flex-row center-align">
       <image class="headPic" mode="aspectFill" src="{{item.replyHeadPic}}"></image>
-      <view class="middle">
+      <view class="middle flex-col">
         <view class="nickName">
           <text style="color: rgb(93, 192, 209);">{{item.replyNickName}}</text>
           <text wx:if="{{item.likedNums > 1}}"> 等</text>

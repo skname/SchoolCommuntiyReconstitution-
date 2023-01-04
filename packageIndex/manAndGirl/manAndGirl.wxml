@@ -1,0 +1,4 @@
+<view class="container center">
+  <view style="color:#cca8e9;font-size: 40rpx; font-weight: bold;">点击图片长按添加墙墙为好友呀</view>
+  <image style="width: 60vw; margin-top: 60rpx;" src="https://img.skself.work/icon/logo/c9203fc3470a8279b5fb009d693e3ff.jpg" mode="aspectFill" bindtap="handlePreview" data-curr="0" data-imgs="{{['https://img.skself.work/icon/logo/c9203fc3470a8279b5fb009d693e3ff.jpg']}}"></image>
+</view>

@@ -42,7 +42,7 @@ export const navigationList = [{
   },
   {
     id: 2,
-    name: '表白墙',
+    name: '男神女神墙',
     type: 'confession',
     color: '#d4237a'
   },
