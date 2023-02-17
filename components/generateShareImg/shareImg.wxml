@@ -1,0 +1,18 @@
+<view class="contain">
+  <canvas type="2d" id="shareImg" class="canvas" />
+  <view class="card">
+    <view class="content">
+      <view class="content-text">
+        <text>{{ articleInfo.content}}</text>
+      </view>
+      <view class="photo">
+        <image class="img" src="{{articleInfo.headPic}}" mode="" />
+        <text class="text">{{articleInfo.nickName}}</text>
+      </view>
+    </view>
+    <view class="footer">
+      <image class="img" src="https://img.skself.work/icon/logo/logo.png" mode="" />
+      <image class="img" wx:if="{{imageSrc !=''}}" src="{{imageSrc}}" mode="" />
+    </view>
+  </view>
+</view>

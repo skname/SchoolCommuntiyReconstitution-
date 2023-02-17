@@ -43,15 +43,18 @@ function handleClass(data) {
 }
 // 初始化
 export async function getClass(className, week) {
+
   const res = await getAction('/ct/className', {
     className,
     weekNum: week
   })
+
   if (res.code != 200) {
-    return showToast({
+    showToast({
       title: res.msg,
       icon: 'error'
     })
+    return false
   }
   const table = handleClass(res.data.table)
   return table
@@ -78,7 +81,7 @@ export async function init() {
   }
 
   // 如果没有缓存或者过期重新拿课表
-  if (!ClassInfo || (ClassInfo.oldWeek !== week)) {
+  if (!ClassInfo || (ClassInfo && ClassInfo.oldWeek !== week)) {
     const classTable = await getClass.call(this, getStudentInfo().classNo, week);
     ClassInfo = {
       classTable,

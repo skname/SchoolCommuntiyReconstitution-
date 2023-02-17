@@ -21,5 +21,6 @@
       <image src="{{item.icon}}" mode="aspectFit"></image>
       <text>{{item.name}}</text>
     </view>
+
   </view>
 </view>

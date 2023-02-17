@@ -6,7 +6,9 @@ import {
   preview,
   iconStorage,
   MY_ARTICLE_ICON,
-  getOpenId
+  getOpenId,
+  routerAndParam,
+  isLogin
 } from '../../utils/index.js'
 
 Page({
@@ -31,6 +33,26 @@ Page({
     this.openId = result.openId;
     getPersonInfoAndRender.call(this, result.openId == getOpenId());
     initProxy.call(this);
+  },
+  handleChat() {
+    if (!isLogin()) {
+      return wx.switchTab({
+        url: '/pages/info/info',
+        success() {
+          wx.showToast({
+            title: '请先登录！',
+            icon: 'success'
+          })
+        }
+      })
+    }
+    routerAndParam("/packageInfo/chatPage/chat", {
+      userInfo: {
+        targetOpenId: this.openId,
+        headPic: this.data.userInfo.headPic
+      }
+    })
+
   },
 
   /**

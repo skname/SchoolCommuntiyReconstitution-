@@ -36,14 +36,14 @@
   <view wx:else="{{comments.length == 0}}">
     <component-load text="还没有评论,快来评论吧！"></component-load>
   </view>
+  <image :src="{{imgUrl}}" />
   <!-- 底部添加留言按钮 -->
   <view class="bottom-button flex-row center-justify center-align">
     <view class="bottom-input flex-row center-align" catchtap="sendCommont" data-type="1" data-aid="{{articleInfo.aid}}" data-nickname="{{articleInfo.nickName}}">
       <image class="input-headPic" src="{{icons[1]}}"></image>
       <text class="bottom-input-text">快来留下你的评论吧！</text>
     </view>
-    <view class="share center">
-      <!-- <button class="share-open" open-type="share"></button> -->
+    <view class="share center" catchtap="handleOpenShare">
       <image class="share-button" mode="aspectFill" src="{{icons[0]}}"></image>
     </view>
   </view>
@@ -62,22 +62,28 @@
       </view>
     </view>
   </view>
+
+
   <!-- 转发弹窗 -->
-  <view class="golbal-mask">
-    <view class="share-win flex-col center-align">
+  <view class="golbal-mask" wx:if="{{isShowShareButton}}" catchtap="handleCloseShare">
+    <view class="share-win flex-col center-align" catchtap="handleVoid">
       <view class="title">分享至</view>
       <view class="middle-content flex-row">
-        <view class="share-win-item flex-col center-align">
-          <image class="image" mode="aspectFill" src="https://img.skself.work/icon/weChat.png"></image>
-          <text>微信好友</text>
-        </view>
-        <view class="share-win-item flex-col center-align">
+        <component-share-button>
+          <view class="share-win-item flex-col center-align">
+            <image class="image" mode="aspectFill" src="https://img.skself.work/icon/weChat.png"></image>
+            <text>微信好友</text>
+          </view>
+        </component-share-button>
+        <!-- 改 -->
+        <view class="share-win-item flex-col center-align" catchtap="handleGenerateSharePic">
           <image class="image" mode="aspectFill" src="https://img.skself.work/icon/friend.png"></image>
           <text>朋友圈海报</text>
         </view>
       </view>
-      <view class="common-button">取消</view>
+      <view class="common-button" catchtap="handleCloseShare">取消</view>
     </view>
   </view>
-
+  <!-- 分享图片 -->
+  <component-share-img wx:if="{{isShowCanvas}}" articleInfo="{{articleInfo}}" shareParam="{{shareParam}}"></component-share-img>
 </view>

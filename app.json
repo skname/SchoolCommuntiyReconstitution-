@@ -32,7 +32,8 @@
         "personInfo/personInfo",
         "myArticle/myArticle",
         "cooperation/index",
-        "joinus/index"
+        "joinus/index",
+        "chatPage/chat"
       ]
     },
     {
@@ -107,10 +108,5 @@
     "color": "#bfbfbf",
     "selectedColor": "#c3bef0"
   },
-  "plugins": { 
-    "poster": {
-    "version": "1.0.14",
-    "provider": "wx8a6f7c4b3d410554"
-  }},
   "lazyCodeLoading": "requiredComponents"
 }

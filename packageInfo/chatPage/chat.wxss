@@ -1,71 +1,32 @@
-.container {
-  min-height: 100vh;
-  height: 100%;
-  position: relative;
-}
-
-.card,
-.comment {
-  width: 100vw;
-}
-
-.comment {
+/* 聊天内容 */
+.content {
+  width: 100%;
+  height: 90vh;
+  overflow-y: scroll;
   box-sizing: border-box;
-  padding-bottom: 10vh;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
 }
 
-.comment .comment-item {
-  padding: 30rpx 20rpx;
-  border-bottom: 2rpx rgba(221, 220, 220, 0.541) solid;
-  background-color: #fff;
+.chat-item {
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: rgba(234, 235, 235, 0.753);
+  border-radius: 30rpx;
+  display: flex;
+  margin-top: 10rpx;
+  font-size: 28rpx;
 }
 
-.comment-item .comment-item-left {
-  flex-shrink: 0;
+
+.chat-item .headPic {
   width: 90rpx;
   height: 90rpx;
   border-radius: 50%;
-  overflow: hidden;
+  flex-shrink: 0;
 }
 
-.comment-item .comment-item-left image {
-  width: 100%;
-  height: 100%;
-}
-
-.comment-item .comment-item-right {
-  width: 100%;
-  margin-left: 30rpx;
-}
-
-.comment-item-right .comment-nickName,
-.comment-item-right .comment-content {
-  margin-top: 10rpx;
-}
-
-.comment-item-right .comment-content {
-  width: 100%;
-}
-
-/* 二级评论 */
-.comment-item-right .comment-child {
-  font-size: 28rpx;
-  color: cornflowerblue;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 20rpx;
-  background-color: #f2f3f7;
-  border-radius: 20rpx;
-}
-
-.comment-item-right .comment-child .comment-child-item {
-  padding: 20rpx 0;
-}
-
-.comment-item-right .comment-time {
-  margin-top: 10rpx;
-  color: #ccc;
-}
 
 /* 评论框 */
 .mask-content {
@@ -90,7 +51,7 @@
 
 .mask-content-bottom {
   height: 8vh;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .bottom-left,
@@ -134,41 +95,8 @@
   border-radius: 20rpx;
 }
 
-/* 评论闪动 */
-@keyframes newCommentAnimation {
-  0% {
-    background-color: initial;
-  }
 
-  50% {
-    background-color: rgba(175, 170, 162, 0.308);
-  }
 
-  100% {
-    background-color: initial;
-  }
-}
-
-.newComment {
-  transition: 1s;
-  animation-name: newCommentAnimation;
-  animation-timing-function: step-end;
-  animation-duration: 1s;
-  animation-delay: 0s;
-  animation-iteration-count: 2;
-}
-
-/* 评论图片 */
-.comment-item-right .commit-picture {
-  width: 100%;
-}
-
-.comment-item-right .commit-picture .image {
-  margin-top: 10rpx;
-  width: 30vw;
-  height: 30vw;
-  border-radius: 20rpx;
-}
 
 /* 底部评论按钮 */
 .bottom-button {
@@ -180,19 +108,12 @@
 }
 
 .bottom-input {
-  width: 70%;
+  width: 80%;
   height: 5vh;
   background-color: #f2f3f7;
   border-radius: 50rpx;
-  margin-right: 50rpx;
 }
 
-.input-headPic {
-  margin-left: 10rpx;
-  width: 5vh;
-  height: 5vh;
-  border-radius: 50%;
-}
 
 .bottom-input-text {
   margin-left: 15%;

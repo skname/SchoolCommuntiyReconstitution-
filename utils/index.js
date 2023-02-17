@@ -11,3 +11,5 @@ export * from './iconStorage.js';
 export * from './icons.js';
 export * from './checkSymbol.js';
 export * from './qiniu/qiniu.js';
+export * from '../components/generateShareImg/weixin.js';
+export * from "./ws.js"

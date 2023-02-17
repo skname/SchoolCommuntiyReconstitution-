@@ -48,7 +48,7 @@ export function back(data = {
   delta: 1
 }) {
   wx.navigateBack(data);
-} 
+}
 // 跳转其他App
 export function ToApp(appId, path, fn = () => {}) {
   wx.navigateToMiniProgram({
@@ -63,7 +63,7 @@ export function ToApp(appId, path, fn = () => {}) {
   })
 }
 
-export function toWeb(src){
+export function toWeb(src) {
   wx.navigateTo({
     url: `/packageIndex/webView/web?src=${src}`,
   })

@@ -25,7 +25,7 @@ export function getAction(url, data = null) {
   }
   return new Promise((res, rej) => {
     wx.request({
-      url: url.includes('http') ? url : `${baseUrl}${url}${str}`,
+      url: url.includes('http') ? `${url}${str}` : `${baseUrl}${url}${str}`,
       timeout: 5000,
       method: "GET",
       dataType: "json",
@@ -37,12 +37,11 @@ export function getAction(url, data = null) {
         if (data.cookies[0]) {
           cookieBase = data.cookies[0].split(";")[0];
         }
-        if (data.data.code != 200) {
-          showToast({
+        if (data.data.code && data.data.code != 200) {
+          data.data.msg && showToast({
             title: data.data.msg,
             icon: 'error'
           })
-          return;
         }
         res(data.data);
       },
@@ -76,34 +75,34 @@ export function postAction(
       timeout: 5000,
       responseType: "text",
       success: (data) => {
-        loadMessage && hideLoading();
         let result = data.data;
         const {
           code,
           msg
         } = result;
-        if (code == 200) {
+        if (code && code != 200) {
           isShowMessage &&
             showToast({
               title: msg || "",
-              icon: "success",
+              icon: "error",
             });
-          res(result.data);
-        } else {
+        }
+        isShowMessage &&
           showToast({
             title: msg || "",
-            icon: "error",
+            icon: "success",
           });
-          rej('')
-        }
+        res(result.data || result);
       },
       fail: (err) => {
-        hideLoading();
         showToast({
           title: "服务器异常",
           icon: "error",
         });
         rej(err);
+      },
+      complete() {
+        loadMessage && hideLoading();
       }
     });
   });

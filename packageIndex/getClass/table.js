@@ -31,7 +31,9 @@ Page({
     selectIndex: [0, 0],
     otherClass: '其它班级',
     week: 0,
-    isMask: false
+    isMask: false,
+    char_lt: "<",
+    char_gt: ">",
   },
   handleSelect() {
     const currStatus = this.data.isChecked;
@@ -101,6 +103,29 @@ Page({
     })
   },
   handleStatic() { // 不做处理
+  },
+
+  async handleSelectWeek(e) {
+    const {
+      type
+    } = e.currentTarget.dataset;
+    let week = this.data.week
+    const className = this.data.otherClass || this.data.class;
+    if (type == 0 && week > 1) {
+      // 向左
+      week -= 1
+
+    }
+    if (type == 1 && week < 16) {
+      // 向右
+      week += 1
+    }
+
+    const table = await getClass(className, week);
+    this.setData({
+      table,
+      week
+    })
   },
   /**
    * 生命周期函数--监听页面加载

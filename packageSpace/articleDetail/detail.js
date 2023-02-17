@@ -9,7 +9,7 @@ import {
   preview,
   chooseImage,
   COMMONT_ICONS,
-  iconStorage
+  iconStorage,
 } from '../../utils/index.js';
 
 import {
@@ -19,8 +19,13 @@ import {
 } from './index.js'
 Page({
   data: {
+    shareParam: null,
+    articleInfo: null,
     isShow: false,
     isFocus: false,
+    isShowShareButton: false,
+    isShowCanvas: false,
+    imgUrl: "",
     commentContent: '',
     nickName: '',
     icons: iconStorage.get(COMMONT_ICONS),
@@ -125,6 +130,42 @@ Page({
       commentPic: []
     })
   },
+  handleOpenShare() {
+    this.setData({
+      isShowShareButton: true
+    })
+  },
+  handleCloseShare() {
+    this.setData({
+      isShowShareButton: false
+    })
+  },
+  // 防止事件冒泡
+  handleVoid() {},
+  async handleGenerateSharePic() {
+    const that = this;
+    wx.getSetting({
+      success(res) {
+        const writePhotosAlbum = res.authSetting["scope.writePhotosAlbum"]
+        // 第一次
+        if (writePhotosAlbum == undefined) {
+          wx.saveImageToPhotosAlbum({})
+          return
+        }
+        if (writePhotosAlbum == false) {
+          wx.openSetting()
+          return
+        }
+
+
+        that.setData({
+          isShowCanvas: true,
+          isShowShareButton: false
+        })
+      }
+    })
+
+  },
   /** 
    * 生命周期函数--监听页面加载
    */
@@ -134,15 +175,16 @@ Page({
     } = options;
     this.shareData = detail
     detail = JSON.parse(detail)
+    // 判断是否是从定位进来
     if (isDef(detail.positionId)) {
       this.positionId = detail.positionId
       nextTickRender.call(this, {
         positionId: detail.positionId
       })
     }
-
     nextTickRender.call(this, {
-      articleInfo: detail.articleInfo
+      articleInfo: detail.articleInfo,
+      shareParam: this.shareData
     })
     initComment.call(this, detail.articleInfo.aid)
   },

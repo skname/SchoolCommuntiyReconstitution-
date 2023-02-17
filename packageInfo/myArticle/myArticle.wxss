@@ -93,3 +93,11 @@
 .three {
   color: #0f7fe8;
 }
+
+.send-button {
+  margin-left: 20rpx;
+  font-size: 3s0rpx;
+  background-color: rgb(209, 230, 92);
+  padding: 5rpx 20rpx;
+  border-radius: 20rpx;
+}

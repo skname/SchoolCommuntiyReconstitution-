@@ -2,7 +2,9 @@
   "usingComponents": {
     "component-card": "/components/card/card",
     "component-load": "/components/load/load",
-    "component-help": "/components/help/help"
+    "component-help": "/components/help/help",
+    "component-share-button": "/components/shareButton/shareButton",
+    "component-share-img": "/components/generateShareImg/shareImg"
   }, 
   "enablePullDownRefresh": true
 }

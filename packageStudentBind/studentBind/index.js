@@ -1,5 +1,6 @@
 let workUrl = 'https://skself.work'; // 工作
-let baseUrl = workUrl
+let test = "https://td.3threestart.com"
+let baseUrl = test
 let cookieStore = '';
 const STUDENTINFO = 'studentInfo';
 const USERINFO = 'userInfo';

@@ -1,18 +1,18 @@
 <view class="component-nav">
-  <scroll-view class="navTab" scroll-x="true">
-    <view wx:for="{{nav}}" bindtap="handleSelect" data-index="{{index}}" class="nav-item {{select == index ? 'select': ''}}" wx:key="id">
-      {{item.name}}
-    </view>
-  </scroll-view>
+    <scroll-view class="navTab" scroll-x="true">
+        <view wx:for="{{nav}}" bindtap="handleSelect" data-index="{{index}}" class="nav-item {{select == index ? 'select': ''}}" wx:key="id">
+            {{item.name}}
+        </view>
+    </scroll-view>
 
-  <!-- 滚动list -->
-  <scroll-view class="scroll-view" scroll-y="true" lower-threshold="50" refresher-enabled="{{refresh}}" bindrefresherrefresh="handleRefresh">
-    <!-- 置顶位置 -->
-    <card-component class="card-component" wx:if="{{topArticle !=null}}" articleInfo="{{topArticle}}" isTop="{{true}}" />
+    <!-- 滚动list -->
+    <scroll-view class="scroll-view" scroll-y="true" lower-threshold="50" refresher-enabled="{{refresh}}" bindrefresherrefresh="handleRefresh" bindscrolltolower="handleScrollBottom">
+        <!-- 置顶位置 -->
+        <card-component class="card-component" wx:if="{{topArticle !=null}}" articleInfo="{{topArticle}}" isTop="{{true}}" />
 
-    <view class="content" style="margin-top: {{topArticle!=null?'': '14vh'}};">
-      <slot></slot>
-    </view>
-  </scroll-view>
+        <view class="content" style="margin-top: {{topArticle!=null?'': '14vh'}};">
+            <slot></slot>
+        </view>
+    </scroll-view>
 
 </view>

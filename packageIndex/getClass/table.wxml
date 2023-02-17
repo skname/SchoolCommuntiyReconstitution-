@@ -24,7 +24,17 @@
   </view>
   <view class="footer">
     <view>{{class}}</view>
-    <view>第{{week}}周</view>
+    <view>
+      <view class="button_lt" catchtap="handleSelectWeek" data-type="0">
+        {{char_lt}}
+      </view>
+      <view>
+        第{{week}}周
+      </view>
+      <view class="button_gt" catchtap="handleSelectWeek" data-type="1">
+        {{char_gt}}
+      </view>
+    </view>
     <view>
       <picker range="{{allClass}}" bindchange="handlePickChang" mode="multiSelector" value="{{selectIndex}}" range-key="name" bindcolumnchange="handleColumn" bindchange="handleChange">
         <view class="currSelect">{{otherClass}}</view>

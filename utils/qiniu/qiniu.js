@@ -69,6 +69,33 @@ async function getToken() {
   } = await getAction('/artpic/getToken');
   return data.token
 }
+// 限制并发数
+// async function limit(urls = [], limit = 3, FileDir) {
+//   const token = await getToken(),
+//     ret = [],
+//     total = urls.length;
+//   return new Promise((resolve, reject) => {
+//     for (let i = 0; i < limit; i++) {
+//       start();
+//     }
+
+//     function start() {
+//       const path = urls.shift()
+//       const filePath = generateFileName(FileDir, path)
+//       qiniuUpload(path, token, filePath).then(res => {
+//         ret.push(res);
+//       }).finally(() => {
+//         if (ret.length == total) {
+//           resolve(ret);
+//         } else {
+//           start();
+//         }
+//       })
+//     }
+//   })
+// }
+
+
 
 export async function uploadByQiNiu(filePaths, FileDir) {
   const token = await getToken()
@@ -79,3 +106,9 @@ export async function uploadByQiNiu(filePaths, FileDir) {
   const result = await Promise.all(promise);
   return result.join(',');
 }
+
+// export async function uploadByQiNiu(filePaths, FileDir) {
+
+//   const paths = await limit(filePaths, filePaths.length >= 3 ? 4 : filePaths.length, FileDir);
+//   return paths.join(',')
+// }
